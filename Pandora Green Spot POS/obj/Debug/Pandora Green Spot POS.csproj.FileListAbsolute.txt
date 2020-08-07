@@ -86,3 +86,4 @@ C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandor
 C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
 C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
 C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ListItemManage.resources

@@ -85,6 +85,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ItemView.Designer.cs" />
+    <Compile Include="ListItemManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItemManage.Designer.cs">
+      <DependentUpon>ListItemManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +132,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs" />
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports.Designer.cs" />
     <Compile Include="RoundPanel.cs">
       <SubType>UserControl</SubType>
@@ -152,6 +160,9 @@
       <DependentUpon>ItemBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemView.resx" />
+    <EmbeddedResource Include="ListItemManage.resx">
+      <DependentUpon>ListItemManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
