@@ -33,13 +33,14 @@
             this.printPreviewMenuDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.gradientPanel1 = new Pandora_Green_Spot_POS.GradientPanel();
             this.btn_printMenu = new PointOfSalesSystem.CustomButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.itemArea = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.devider2 = new Pandora_Green_Spot_POS.Devider();
             this.devider1 = new Pandora_Green_Spot_POS.Devider();
             this.roundPanel2 = new Pandora_Green_Spot_POS.RoundPanel();
             this.roundPanel1 = new Pandora_Green_Spot_POS.RoundPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +62,9 @@
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(87)))), ((int)(((byte)(217)))));
             this.gradientPanel1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.gradientPanel1.Controls.Add(this.label3);
             this.gradientPanel1.Controls.Add(this.btn_printMenu);
-            this.gradientPanel1.Controls.Add(this.flowLayoutPanel1);
+            this.gradientPanel1.Controls.Add(this.itemArea);
             this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.devider2);
@@ -93,13 +95,14 @@
             this.btn_printMenu.textSize = 0;
             this.btn_printMenu.Click += new System.EventHandler(this.btn_printMenu_Click);
             // 
-            // flowLayoutPanel1
+            // itemArea
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 93);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(681, 486);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.itemArea.AutoScroll = true;
+            this.itemArea.BackColor = System.Drawing.Color.White;
+            this.itemArea.Location = new System.Drawing.Point(15, 93);
+            this.itemArea.Name = "itemArea";
+            this.itemArea.Size = new System.Drawing.Size(681, 486);
+            this.itemArea.TabIndex = 6;
             // 
             // label2
             // 
@@ -165,6 +168,17 @@
             this.roundPanel1.Size = new System.Drawing.Size(710, 618);
             this.roundPanel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(745, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Item Name";
+            // 
             // ManageItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,7 +196,7 @@
         #endregion
 
         private GradientPanel gradientPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel itemArea;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Devider devider2;
@@ -192,5 +206,6 @@
         private PointOfSalesSystem.CustomButton btn_printMenu;
         private System.Drawing.Printing.PrintDocument printMenuDoc;
         private System.Windows.Forms.PrintPreviewDialog printPreviewMenuDialog;
+        private System.Windows.Forms.Label label3;
     }
 }
