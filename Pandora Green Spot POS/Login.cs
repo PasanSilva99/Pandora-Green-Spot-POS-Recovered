@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
+    //Pasan is crazy
     public partial class Login : Form
     {
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PandoraGreenSpot\Pandora.mdf;Integrated Security=True;Connect Timeout=30");
