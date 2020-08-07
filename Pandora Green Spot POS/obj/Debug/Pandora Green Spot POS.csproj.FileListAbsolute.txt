@@ -110,4 +110,7 @@ C:\Users\Dasitha\Documents\GitHub\Pandora\Pandora Green Spot POS\obj\Debug\Pando
 C:\Users\Dasitha\Documents\GitHub\Pandora\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
 C:\Users\Dasitha\Documents\GitHub\Pandora\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
 C:\Users\Dasitha\Documents\GitHub\Pandora\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
