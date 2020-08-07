@@ -385,6 +385,7 @@
             this.btn_milkShakes.Size = new System.Drawing.Size(206, 49);
             this.btn_milkShakes.TabIndex = 44;
             this.btn_milkShakes.textSize = 12;
+            this.btn_milkShakes.Click += new System.EventHandler(this.btn_milkShakes_Click);
             // 
             // btn_FruitJuice
             // 
@@ -402,6 +403,7 @@
             this.btn_FruitJuice.Size = new System.Drawing.Size(206, 49);
             this.btn_FruitJuice.TabIndex = 43;
             this.btn_FruitJuice.textSize = 12;
+            this.btn_FruitJuice.Click += new System.EventHandler(this.btn_FruitJuice_Click);
             // 
             // btn_addToBill
             // 
@@ -555,6 +557,7 @@
             this.TB_search.Name = "TB_search";
             this.TB_search.Size = new System.Drawing.Size(190, 19);
             this.TB_search.TabIndex = 29;
+            this.TB_search.TextChanged += new System.EventHandler(this.TB_search_TextChanged);
             // 
             // roundPanel3
             // 
