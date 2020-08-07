@@ -100,6 +100,13 @@ namespace Pandora_Green_Spot_POS
             {
                 MessageBox.Show("Image Null");
             }
+
+            tb_name.Text = "";
+            img_pic.Image = null;
+            cb_category.Text = null;
+            tb_price.Text = null;
+
         }
+
     }
 }
