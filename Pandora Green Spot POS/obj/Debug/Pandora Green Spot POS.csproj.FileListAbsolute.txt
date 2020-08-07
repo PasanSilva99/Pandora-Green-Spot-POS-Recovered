@@ -42,3 +42,25 @@ C:\Users\pasan\source\repos\PandoraGreenSpotPOS R\Pandora Green Spot POS\Pandora
 C:\Users\pasan\source\repos\PandoraGreenSpotPOS R\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe
 C:\Users\pasan\source\repos\PandoraGreenSpotPOS R\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.pdb
 C:\Users\pasan\source\repos\PandoraGreenSpotPOS R\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csprojAssemblyReference.cache
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe.config
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.pdb
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csprojAssemblyReference.cache
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.AddProduct.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.billItem.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.CustomButton.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Devider.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ItemBlock.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ItemView.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Login.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ManageItems.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Navigation.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.NewSale.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.PayScreen.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Properties.Resources.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Reports.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.RoundPanel.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.GenerateResource.cache
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
