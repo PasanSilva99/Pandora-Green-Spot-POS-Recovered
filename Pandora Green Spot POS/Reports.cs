@@ -16,5 +16,10 @@ namespace Pandora_Green_Spot_POS
         {
             InitializeComponent();
         }
+
+        private void gradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            //Hello
+        }
     }
 }

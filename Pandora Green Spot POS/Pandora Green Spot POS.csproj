@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +85,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ItemView.Designer.cs" />
+    <Compile Include="ListItemManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItemManage.Designer.cs">
+      <DependentUpon>ListItemManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +135,7 @@
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Reports.Designer.cs" />
     <Compile Include="RoundPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +160,9 @@
       <DependentUpon>ItemBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemView.resx" />
+    <EmbeddedResource Include="ListItemManage.resx">
+      <DependentUpon>ListItemManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +183,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx" />
     <EmbeddedResource Include="RoundPanel.resx">
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </EmbeddedResource>

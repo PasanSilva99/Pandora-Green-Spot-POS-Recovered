@@ -45,6 +45,8 @@ namespace Pandora_Green_Spot_POS
             TB_qty.LostFocus += TB_qty_LostFocus;
             TB_dis.LostFocus += TB_dis_LostFocus;
 
+
+            //Loding the available item the the item list view
             try
             {
                 String qry = "Select Product_Name, Category, Product_Price, Image FROM Product";
@@ -415,6 +417,125 @@ namespace Pandora_Green_Spot_POS
                 lbl_finalDis.Text = "0";
                 lbl_billID.Text = "0";
                 billArea.Controls.Clear();
+            }
+        }
+
+        private void btn_FruitJuice_Click(object sender, EventArgs e)
+        {
+            ItemArea.Controls.Clear();
+            try
+            {
+                String qry = "Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category = 'Fruit juice'";
+                SqlCommand cmd = new SqlCommand(qry, Connection);
+                Connection.Open();
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    ItemView block = new ItemView();
+                    block.ItemName = sdr.GetString(0);
+                    block.ItemImage = Image.FromStream(sdr.GetStream(3));
+                    block.BrandName = sdr.GetString(1);
+                    block.itemPrice = sdr.GetString(2); //Change this
+                    block.Width = 150;
+                    block.Height = 150;
+                    block._BorderColor = Color.LightGray;
+                    block.Click += Block_Click;
+                    block.MouseEnter += Block_MouseEnter;
+                    block.MouseLeave += Block_MouseLeave;
+                    ItemArea.Controls.Add(block);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private void btn_milkShakes_Click(object sender, EventArgs e)
+        {
+            ItemArea.Controls.Clear();
+            try
+            {
+                String qry = "Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category = 'Milkshake'";
+                SqlCommand cmd = new SqlCommand(qry, Connection);
+                Connection.Open();
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    ItemView block = new ItemView();
+                    block.ItemName = sdr.GetString(0);
+                    block.ItemImage = Image.FromStream(sdr.GetStream(3));
+                    block.BrandName = sdr.GetString(1);
+                    block.itemPrice = sdr.GetString(2); //Change this
+                    block.Width = 150;
+                    block.Height = 150;
+                    block._BorderColor = Color.LightGray;
+                    block.Click += Block_Click;
+                    block.MouseEnter += Block_MouseEnter;
+                    block.MouseLeave += Block_MouseLeave;
+                    ItemArea.Controls.Add(block);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TB_search_TextChanged(object sender, EventArgs e)
+        {
+            if (TB_search.Text != null)
+            {
+                ItemArea.Controls.Clear();
+                try
+                {
+                    String qry = $"Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category LIKE '%{TB_search.Text}%' OR Product_Name LIKE '%{TB_search.Text}%' OR Product_Price LIKE '%{TB_search.Text}%'";
+                    SqlCommand cmd = new SqlCommand(qry, Connection);
+                    Connection.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        ItemView block = new ItemView();
+                        block.ItemName = sdr.GetString(0);
+                        block.ItemImage = Image.FromStream(sdr.GetStream(3));
+                        block.BrandName = sdr.GetString(1);
+                        block.itemPrice = sdr.GetString(2); //Change this
+                        block.Width = 150;
+                        block.Height = 150;
+                        block._BorderColor = Color.LightGray;
+                        block.Click += Block_Click;
+                        block.MouseEnter += Block_MouseEnter;
+                        block.MouseLeave += Block_MouseLeave;
+                        ItemArea.Controls.Add(block);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    Connection.Close();
+                }
             }
         }
     }
