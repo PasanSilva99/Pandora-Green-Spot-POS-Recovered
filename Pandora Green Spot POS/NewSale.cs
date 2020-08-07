@@ -494,6 +494,11 @@ namespace Pandora_Green_Spot_POS
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TB_search_TextChanged(object sender, EventArgs e)
         {
             if (TB_search.Text != null)
