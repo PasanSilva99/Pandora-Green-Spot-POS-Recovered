@@ -124,12 +124,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Reports.cs" />
+    <Compile Include="Reports.Designer.cs" />
     <Compile Include="RoundPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,9 +170,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx" />
     <EmbeddedResource Include="RoundPanel.resx">
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </EmbeddedResource>

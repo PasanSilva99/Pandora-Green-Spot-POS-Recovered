@@ -28,40 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gradientPanel1 = new Pandora_Green_Spot_POS.GradientPanel();
+            this.devider6 = new Pandora_Green_Spot_POS.Devider();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_WeaklySales = new System.Windows.Forms.Label();
+            this.lbl_TodaysSales = new System.Windows.Forms.Label();
+            this.devider5 = new Pandora_Green_Spot_POS.Devider();
+            this.devider4 = new Pandora_Green_Spot_POS.Devider();
+            this.devider3 = new Pandora_Green_Spot_POS.Devider();
+            this.devider2 = new Pandora_Green_Spot_POS.Devider();
+            this.devider1 = new Pandora_Green_Spot_POS.Devider();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_YearlySales = new System.Windows.Forms.Label();
+            this.lbl_MonthlySales = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.roundPanel6 = new Pandora_Green_Spot_POS.RoundPanel();
+            this.roundPanel5 = new Pandora_Green_Spot_POS.RoundPanel();
+            this.roundPanel4 = new Pandora_Green_Spot_POS.RoundPanel();
             this.roundPanel3 = new Pandora_Green_Spot_POS.RoundPanel();
             this.roundPanel2 = new Pandora_Green_Spot_POS.RoundPanel();
             this.roundPanel1 = new Pandora_Green_Spot_POS.RoundPanel();
-            this.roundPanel4 = new Pandora_Green_Spot_POS.RoundPanel();
-            this.roundPanel5 = new Pandora_Green_Spot_POS.RoundPanel();
-            this.roundPanel6 = new Pandora_Green_Spot_POS.RoundPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_MonthlySales = new System.Windows.Forms.Label();
-            this.lbl_YearlySales = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.devider1 = new Pandora_Green_Spot_POS.Devider();
-            this.devider2 = new Pandora_Green_Spot_POS.Devider();
-            this.devider3 = new Pandora_Green_Spot_POS.Devider();
-            this.devider4 = new Pandora_Green_Spot_POS.Devider();
-            this.devider5 = new Pandora_Green_Spot_POS.Devider();
-            this.lbl_TodaysSales = new System.Windows.Forms.Label();
-            this.lbl_WeaklySales = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.devider6 = new Pandora_Green_Spot_POS.Devider();
             this.gradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // gradientPanel1
@@ -69,8 +59,6 @@
             this.gradientPanel1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(87)))), ((int)(((byte)(217)))));
             this.gradientPanel1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
             this.gradientPanel1.Controls.Add(this.devider6);
-            this.gradientPanel1.Controls.Add(this.chart2);
-            this.gradientPanel1.Controls.Add(this.chart1);
             this.gradientPanel1.Controls.Add(this.label10);
             this.gradientPanel1.Controls.Add(this.label9);
             this.gradientPanel1.Controls.Add(this.lbl_WeaklySales);
@@ -95,9 +83,209 @@
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1224, 531);
+            this.gradientPanel1.Size = new System.Drawing.Size(1121, 531);
             this.gradientPanel1.TabIndex = 0;
             this.gradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel1_Paint);
+            // 
+            // devider6
+            // 
+            this.devider6.BackColor = System.Drawing.Color.White;
+            this.devider6.Location = new System.Drawing.Point(585, 241);
+            this.devider6.Name = "devider6";
+            this.devider6.Size = new System.Drawing.Size(500, 11);
+            this.devider6.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label10.Location = new System.Drawing.Point(800, 84);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(232, 38);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "0";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label9.Location = new System.Drawing.Point(552, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(230, 27);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "0";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_WeaklySales
+            // 
+            this.lbl_WeaklySales.BackColor = System.Drawing.Color.White;
+            this.lbl_WeaklySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_WeaklySales.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_WeaklySales.Location = new System.Drawing.Point(287, 94);
+            this.lbl_WeaklySales.Name = "lbl_WeaklySales";
+            this.lbl_WeaklySales.Size = new System.Drawing.Size(231, 29);
+            this.lbl_WeaklySales.TabIndex = 21;
+            this.lbl_WeaklySales.Text = "0";
+            this.lbl_WeaklySales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_TodaysSales
+            // 
+            this.lbl_TodaysSales.BackColor = System.Drawing.Color.White;
+            this.lbl_TodaysSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TodaysSales.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_TodaysSales.Location = new System.Drawing.Point(28, 90);
+            this.lbl_TodaysSales.Name = "lbl_TodaysSales";
+            this.lbl_TodaysSales.Size = new System.Drawing.Size(236, 29);
+            this.lbl_TodaysSales.TabIndex = 17;
+            this.lbl_TodaysSales.Text = "0";
+            this.lbl_TodaysSales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // devider5
+            // 
+            this.devider5.BackColor = System.Drawing.Color.White;
+            this.devider5.Location = new System.Drawing.Point(40, 241);
+            this.devider5.Name = "devider5";
+            this.devider5.Size = new System.Drawing.Size(515, 10);
+            this.devider5.TabIndex = 16;
+            // 
+            // devider4
+            // 
+            this.devider4.BackColor = System.Drawing.Color.White;
+            this.devider4.Location = new System.Drawing.Point(798, 77);
+            this.devider4.Name = "devider4";
+            this.devider4.Size = new System.Drawing.Size(234, 10);
+            this.devider4.TabIndex = 15;
+            // 
+            // devider3
+            // 
+            this.devider3.BackColor = System.Drawing.Color.White;
+            this.devider3.Location = new System.Drawing.Point(550, 77);
+            this.devider3.Name = "devider3";
+            this.devider3.Size = new System.Drawing.Size(232, 10);
+            this.devider3.TabIndex = 14;
+            // 
+            // devider2
+            // 
+            this.devider2.BackColor = System.Drawing.Color.White;
+            this.devider2.Location = new System.Drawing.Point(285, 77);
+            this.devider2.Name = "devider2";
+            this.devider2.Size = new System.Drawing.Size(233, 10);
+            this.devider2.TabIndex = 13;
+            // 
+            // devider1
+            // 
+            this.devider1.BackColor = System.Drawing.Color.White;
+            this.devider1.Location = new System.Drawing.Point(28, 77);
+            this.devider1.Name = "devider1";
+            this.devider1.Size = new System.Drawing.Size(236, 10);
+            this.devider1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(598, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Top Sales";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(53, 208);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Revenue";
+            // 
+            // lbl_YearlySales
+            // 
+            this.lbl_YearlySales.AutoSize = true;
+            this.lbl_YearlySales.BackColor = System.Drawing.Color.White;
+            this.lbl_YearlySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_YearlySales.Location = new System.Drawing.Point(830, 54);
+            this.lbl_YearlySales.Name = "lbl_YearlySales";
+            this.lbl_YearlySales.Size = new System.Drawing.Size(97, 20);
+            this.lbl_YearlySales.TabIndex = 9;
+            this.lbl_YearlySales.Text = "Yearly Sales";
+            // 
+            // lbl_MonthlySales
+            // 
+            this.lbl_MonthlySales.AutoSize = true;
+            this.lbl_MonthlySales.BackColor = System.Drawing.Color.White;
+            this.lbl_MonthlySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MonthlySales.Location = new System.Drawing.Point(581, 54);
+            this.lbl_MonthlySales.Name = "lbl_MonthlySales";
+            this.lbl_MonthlySales.Size = new System.Drawing.Size(108, 20);
+            this.lbl_MonthlySales.TabIndex = 8;
+            this.lbl_MonthlySales.Text = "Monthly Sales";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(313, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Weakly Sales";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(62, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Today\'s Sales";
+            // 
+            // roundPanel6
+            // 
+            this.roundPanel6._BackColor = System.Drawing.Color.White;
+            this.roundPanel6._BorderColor = System.Drawing.Color.Empty;
+            this.roundPanel6._CornerRadius = 20F;
+            this.roundPanel6._Shadow = true;
+            this.roundPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.roundPanel6.Location = new System.Drawing.Point(788, 27);
+            this.roundPanel6.Name = "roundPanel6";
+            this.roundPanel6.Size = new System.Drawing.Size(258, 119);
+            this.roundPanel6.TabIndex = 5;
+            // 
+            // roundPanel5
+            // 
+            this.roundPanel5._BackColor = System.Drawing.Color.White;
+            this.roundPanel5._BorderColor = System.Drawing.Color.Empty;
+            this.roundPanel5._CornerRadius = 20F;
+            this.roundPanel5._Shadow = true;
+            this.roundPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.roundPanel5.Location = new System.Drawing.Point(567, 179);
+            this.roundPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.roundPanel5.Name = "roundPanel5";
+            this.roundPanel5.Size = new System.Drawing.Size(537, 334);
+            this.roundPanel5.TabIndex = 4;
+            // 
+            // roundPanel4
+            // 
+            this.roundPanel4._BackColor = System.Drawing.Color.White;
+            this.roundPanel4._BorderColor = System.Drawing.Color.Empty;
+            this.roundPanel4._CornerRadius = 20F;
+            this.roundPanel4._Shadow = true;
+            this.roundPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.roundPanel4.Location = new System.Drawing.Point(28, 179);
+            this.roundPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.roundPanel4.Name = "roundPanel4";
+            this.roundPanel4.Size = new System.Drawing.Size(537, 334);
+            this.roundPanel4.TabIndex = 3;
             // 
             // roundPanel3
             // 
@@ -120,7 +308,7 @@
             this.roundPanel2.BackColor = System.Drawing.Color.Transparent;
             this.roundPanel2.Location = new System.Drawing.Point(274, 27);
             this.roundPanel2.Name = "roundPanel2";
-            this.roundPanel2.Size = new System.Drawing.Size(268, 119);
+            this.roundPanel2.Size = new System.Drawing.Size(258, 119);
             this.roundPanel2.TabIndex = 1;
             // 
             // roundPanel1
@@ -135,251 +323,16 @@
             this.roundPanel1.Size = new System.Drawing.Size(258, 119);
             this.roundPanel1.TabIndex = 0;
             // 
-            // roundPanel4
-            // 
-            this.roundPanel4._BackColor = System.Drawing.Color.White;
-            this.roundPanel4._BorderColor = System.Drawing.Color.Empty;
-            this.roundPanel4._CornerRadius = 20F;
-            this.roundPanel4._Shadow = true;
-            this.roundPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.roundPanel4.Location = new System.Drawing.Point(33, 179);
-            this.roundPanel4.Margin = new System.Windows.Forms.Padding(4);
-            this.roundPanel4.Name = "roundPanel4";
-            this.roundPanel4.Size = new System.Drawing.Size(537, 334);
-            this.roundPanel4.TabIndex = 3;
-            // 
-            // roundPanel5
-            // 
-            this.roundPanel5._BackColor = System.Drawing.Color.White;
-            this.roundPanel5._BorderColor = System.Drawing.Color.Empty;
-            this.roundPanel5._CornerRadius = 20F;
-            this.roundPanel5._Shadow = true;
-            this.roundPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.roundPanel5.Location = new System.Drawing.Point(567, 179);
-            this.roundPanel5.Margin = new System.Windows.Forms.Padding(4);
-            this.roundPanel5.Name = "roundPanel5";
-            this.roundPanel5.Size = new System.Drawing.Size(531, 325);
-            this.roundPanel5.TabIndex = 4;
-            // 
-            // roundPanel6
-            // 
-            this.roundPanel6._BackColor = System.Drawing.Color.White;
-            this.roundPanel6._BorderColor = System.Drawing.Color.Empty;
-            this.roundPanel6._CornerRadius = 20F;
-            this.roundPanel6._Shadow = true;
-            this.roundPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.roundPanel6.Location = new System.Drawing.Point(788, 22);
-            this.roundPanel6.Name = "roundPanel6";
-            this.roundPanel6.Size = new System.Drawing.Size(277, 124);
-            this.roundPanel6.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Today\'s Sales";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(313, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Weakly Sales";
-            // 
-            // lbl_MonthlySales
-            // 
-            this.lbl_MonthlySales.AutoSize = true;
-            this.lbl_MonthlySales.BackColor = System.Drawing.Color.White;
-            this.lbl_MonthlySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MonthlySales.Location = new System.Drawing.Point(581, 54);
-            this.lbl_MonthlySales.Name = "lbl_MonthlySales";
-            this.lbl_MonthlySales.Size = new System.Drawing.Size(108, 20);
-            this.lbl_MonthlySales.TabIndex = 8;
-            this.lbl_MonthlySales.Text = "Monthly Sales";
-            // 
-            // lbl_YearlySales
-            // 
-            this.lbl_YearlySales.AutoSize = true;
-            this.lbl_YearlySales.BackColor = System.Drawing.Color.White;
-            this.lbl_YearlySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_YearlySales.Location = new System.Drawing.Point(830, 49);
-            this.lbl_YearlySales.Name = "lbl_YearlySales";
-            this.lbl_YearlySales.Size = new System.Drawing.Size(97, 20);
-            this.lbl_YearlySales.TabIndex = 9;
-            this.lbl_YearlySales.Text = "Yearly Sales";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 208);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Revenue";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(598, 208);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Top Sales";
-            // 
-            // devider1
-            // 
-            this.devider1.BackColor = System.Drawing.Color.White;
-            this.devider1.Location = new System.Drawing.Point(28, 77);
-            this.devider1.Name = "devider1";
-            this.devider1.Size = new System.Drawing.Size(236, 10);
-            this.devider1.TabIndex = 12;
-            // 
-            // devider2
-            // 
-            this.devider2.BackColor = System.Drawing.Color.White;
-            this.devider2.Location = new System.Drawing.Point(285, 77);
-            this.devider2.Name = "devider2";
-            this.devider2.Size = new System.Drawing.Size(248, 10);
-            this.devider2.TabIndex = 13;
-            // 
-            // devider3
-            // 
-            this.devider3.BackColor = System.Drawing.Color.White;
-            this.devider3.Location = new System.Drawing.Point(550, 77);
-            this.devider3.Name = "devider3";
-            this.devider3.Size = new System.Drawing.Size(232, 10);
-            this.devider3.TabIndex = 14;
-            // 
-            // devider4
-            // 
-            this.devider4.BackColor = System.Drawing.Color.White;
-            this.devider4.Location = new System.Drawing.Point(798, 72);
-            this.devider4.Name = "devider4";
-            this.devider4.Size = new System.Drawing.Size(257, 10);
-            this.devider4.TabIndex = 15;
-            // 
-            // devider5
-            // 
-            this.devider5.BackColor = System.Drawing.Color.White;
-            this.devider5.Location = new System.Drawing.Point(45, 241);
-            this.devider5.Name = "devider5";
-            this.devider5.Size = new System.Drawing.Size(515, 10);
-            this.devider5.TabIndex = 16;
-            // 
-            // lbl_TodaysSales
-            // 
-            this.lbl_TodaysSales.BackColor = System.Drawing.Color.White;
-            this.lbl_TodaysSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TodaysSales.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbl_TodaysSales.Location = new System.Drawing.Point(28, 90);
-            this.lbl_TodaysSales.Name = "lbl_TodaysSales";
-            this.lbl_TodaysSales.Size = new System.Drawing.Size(236, 29);
-            this.lbl_TodaysSales.TabIndex = 17;
-            this.lbl_TodaysSales.Text = "0";
-            this.lbl_TodaysSales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_WeaklySales
-            // 
-            this.lbl_WeaklySales.BackColor = System.Drawing.Color.White;
-            this.lbl_WeaklySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_WeaklySales.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbl_WeaklySales.Location = new System.Drawing.Point(287, 90);
-            this.lbl_WeaklySales.Name = "lbl_WeaklySales";
-            this.lbl_WeaklySales.Size = new System.Drawing.Size(246, 29);
-            this.lbl_WeaklySales.TabIndex = 21;
-            this.lbl_WeaklySales.Text = "0";
-            this.lbl_WeaklySales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(552, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(230, 27);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "0";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label10.Location = new System.Drawing.Point(800, 85);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(255, 38);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "0";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(62, 257);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(471, 216);
-            this.chart1.TabIndex = 24;
-            this.chart1.Text = "chart1";
-            // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(602, 257);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(468, 216);
-            this.chart2.TabIndex = 25;
-            this.chart2.Text = "chart2";
-            // 
-            // devider6
-            // 
-            this.devider6.BackColor = System.Drawing.Color.White;
-            this.devider6.Location = new System.Drawing.Point(585, 241);
-            this.devider6.Name = "devider6";
-            this.devider6.Size = new System.Drawing.Size(500, 10);
-            this.devider6.TabIndex = 26;
-            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 531);
+            this.ClientSize = new System.Drawing.Size(1121, 531);
             this.Controls.Add(this.gradientPanel1);
             this.Name = "Reports";
             this.Text = "Reports";
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -394,8 +347,6 @@
         private RoundPanel roundPanel5;
         private RoundPanel roundPanel4;
         private Devider devider6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_WeaklySales;
