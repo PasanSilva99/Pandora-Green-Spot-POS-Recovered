@@ -19,6 +19,10 @@ namespace Pandora_Green_Spot_POS
         public string itemCategory { get; set; } = "Category";
         public double itemPrice { get; set; } = 0;
         public double popularity { get; set; } = 0;
+        public int ItemID { get; set; }
+        public string ImagePath { get; set; }
+
+        
 
         public ListItemManage()
         {
@@ -26,7 +30,6 @@ namespace Pandora_Green_Spot_POS
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-
             //Draw the graphic
             Graphics gr = e.Graphics;
             gr.SmoothingMode = SmoothingMode.AntiAlias;

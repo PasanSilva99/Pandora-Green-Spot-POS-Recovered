@@ -508,7 +508,7 @@ namespace Pandora_Green_Spot_POS
                 {
                     String qry = $"Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category LIKE '%{TB_search.Text}%' OR Product_Name LIKE '%{TB_search.Text}%' OR Product_Price LIKE '%{TB_search.Text}%'";
                     SqlCommand cmd = new SqlCommand(qry, Connection);
-                    Connection.Open();
+                    if(Connection.State == ConnectionState.Closed) Connection.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 
                     while (sdr.Read())
@@ -526,7 +526,7 @@ namespace Pandora_Green_Spot_POS
                         block.MouseLeave += Block_MouseLeave;
                         ItemArea.Controls.Add(block);
                     }
-
+                    sdr.Close();
                 }
                 catch (Exception ex)
                 {
@@ -534,7 +534,8 @@ namespace Pandora_Green_Spot_POS
                 }
                 finally
                 {
-                    Connection.Close();
+                    
+                    if(Connection.State == ConnectionState.Open)Connection.Close();
                 }
             }
         }
