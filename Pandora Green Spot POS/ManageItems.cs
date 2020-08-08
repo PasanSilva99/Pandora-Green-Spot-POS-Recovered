@@ -118,35 +118,30 @@ namespace Pandora_Green_Spot_POS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            
+
+            MemoryStream stream = new MemoryStream();
+            img_itemImage.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] img = stream.ToArray();
+
             try
             {
 
-                byte[] image = null;
-                FileStream stream = new FileStream(selImgPath, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
-                image = brs.ReadBytes((int)stream.Length);
-
                 if (con.State == ConnectionState.Closed) con.Open();
-                string qry = "Update Product " +
-                    "SET Product_Name = '" + tb_itemName.Text + "'," +
-                    "Category = '" + cb_itemCat.Text + "'," +
-                    "Product_price = '" + tb_itemPrice.Text + "'," +
-                    "Image = '" + image + "'" +
-                    "WHERE ItemID = " + int.Parse(lbl_id.Text);
-
+                String qry = "UPDATE Product SET Product_name = @name, Category = @cat, Product_Price = @price, Image = @image, ImagePath = @path WHERE ItemID = @id";
                 SqlCommand cmd = new SqlCommand(qry, con);
+                cmd.Parameters.AddWithValue("@path", selImgPath);
+                cmd.Parameters.AddWithValue("@image", img);
+                cmd.Parameters.AddWithValue("@price", tb_itemPrice.Text);
+                cmd.Parameters.AddWithValue("@cat", cb_itemCat.Text);
+                cmd.Parameters.AddWithValue("@name", tb_itemName.Text);
+                cmd.Parameters.AddWithValue("@id", int.Parse(lbl_id.Text));
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Saved Successfully");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Saving Error \nError details : " + ex.Message);
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open) con.Close();
+                MessageBox.Show(ex.ToString());
             }
         }
     }
