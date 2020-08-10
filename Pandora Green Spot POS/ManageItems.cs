@@ -15,44 +15,16 @@ namespace Pandora_Green_Spot_POS
     public partial class ManageItems : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PandoraGreenSpot\Pandora.mdf;Integrated Security=True;Connect Timeout=30");
-        int SelectedItemId = 0;
 
-        string selImgPath;
-        byte[] imgbb;
+        string selImgPath = "Not Specified";
+        string imgdir = @"C:\PandoraGreenSpot\ItemImages";
+        string savedpath = "";
         public ManageItems()
         {
             InitializeComponent();
-            //Calculations 
-            try
-            {
-                String qry = "Select Product_Name, Category, Product_Price, Image, ItemID , ImagePath FROM Product";
-                SqlCommand cmd = new SqlCommand(qry, con);
-                con.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
-
-                while (sdr.Read())
-                {
-                    ListItemManage item = new ListItemManage();
-                    item.itemName = sdr.GetString(0);
-                    item.itemCategory = sdr.GetString(1);
-                    item.itemPrice = Convert.ToDouble(sdr.GetString(2));
-                    item.itemImage = Image.FromStream(sdr.GetStream(3));
-                    item.ItemID = sdr.GetInt32(4);
-                    item.MouseClick += Item_MouseClick;
-                    item.MouseEnter += Item_MouseEnter;
-                    item.MouseLeave += Item_MouseLeave;
-                    item.ImagePath = sdr.GetString(5);
-                    itemArea.Controls.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading the Items In to View. \nError : " + ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            
+            //List the items
+            updateList();
         }
 
         private void Item_MouseLeave(object sender, EventArgs e)
@@ -72,9 +44,14 @@ namespace Pandora_Green_Spot_POS
             tb_itemPrice.Text = (sender as ListItemManage).itemPrice.ToString("F2");
             lbl_id.Text = (sender as ListItemManage).ItemID.ToString();
             selImgPath = (sender as ListItemManage).ImagePath;
-            fillPictureBox(img_itemImage,(Bitmap)(sender as ListItemManage).itemImage);
+            fillPictureBox(img_itemImage, (Bitmap)(sender as ListItemManage).itemImage);
         }
 
+        /// <summary>
+        /// This is the summary
+        /// </summary>
+        /// <param name="pbox">PictureBox Control Name</param>
+        /// <param name="bmp">Bitmap Image</param>
         static public void fillPictureBox(PictureBox pbox, Bitmap bmp)
         {
             pbox.SizeMode = PictureBoxSizeMode.Normal;
@@ -143,6 +120,93 @@ namespace Pandora_Green_Spot_POS
             {
                 MessageBox.Show(ex.ToString());
             }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+            tb_itemName.Clear();
+            img_itemImage.Image = null;
+            cb_itemCat.Text = null;
+            tb_itemPrice.Clear();
+            selImgPath = "Not Specified";
+            lbl_id.Text = "";
+            updateList();
+            
+        }
+
+        private void img_itemImage_Click(object sender, EventArgs e)
+        {
+            
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Image Files | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            openFile.Multiselect = false;
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string url = openFile.FileName;
+                fillPictureBox(img_itemImage, (Bitmap)Image.FromFile(url));
+                if(!Directory.Exists(imgdir))
+                {
+                    Directory.CreateDirectory(imgdir);
+                }
+                string[] file = openFile.FileName.Split('.');
+                savedpath = imgdir + @"/" + DateTime.Now.ToString("yyyyMMddhhss") + "." + file[file.Length - 1];
+                File.Copy(url, savedpath, true);
+                File.Delete(selImgPath);
+                
+            }
+        }
+
+        private void img_itemImage_MouseEnter(object sender, EventArgs e)
+        {
+            lbl_chText.Visible = true;
+        }
+
+        private void img_itemImage_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_chText.Visible = false;
+        }
+
+        private void updateList()
+        {
+            itemArea.Controls.Clear();
+            try
+            {
+                String qry = "Select Product_Name, Category, Product_Price, Image, ItemID , ImagePath FROM Product";
+                SqlCommand cmd = new SqlCommand(qry, con);
+                if(con.State == ConnectionState.Closed)
+                con.Open();
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    ListItemManage item = new ListItemManage();
+                    item.itemName = sdr.GetString(0);
+                    item.itemCategory = sdr.GetString(1);
+                    item.itemPrice = Convert.ToDouble(sdr.GetString(2));
+                    item.itemImage = Image.FromStream(sdr.GetStream(3));
+                    item.ItemID = sdr.GetInt32(4);
+                    item.MouseClick += Item_MouseClick;
+                    item.MouseEnter += Item_MouseEnter;
+                    item.MouseLeave += Item_MouseLeave;
+                    item.ImagePath = sdr.GetString(5);
+                    itemArea.Controls.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading the Items In to View. \nError : " + ex.Message);
+            }
+            finally
+            {
+                if(con.State == ConnectionState.Open)
+                con.Close();
+            }
+        }
+
+        private void ManageItems_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // NewSale.;
         }
     }
 }

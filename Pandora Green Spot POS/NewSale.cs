@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using PointOFSalesSystem;
+using System.Runtime.CompilerServices;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -45,7 +46,18 @@ namespace Pandora_Green_Spot_POS
             TB_qty.LostFocus += TB_qty_LostFocus;
             TB_dis.LostFocus += TB_dis_LostFocus;
 
+            LoadList();
+            
+        }
 
+        public void ReloadF()
+        {
+            this.Refresh();
+        }
+
+        private void LoadList()
+        {
+            ItemArea.Controls.Clear();
             //Loding the available item the the item list view
             try
             {
@@ -71,6 +83,9 @@ namespace Pandora_Green_Spot_POS
                 }
 
             }
+
+
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -538,6 +553,11 @@ namespace Pandora_Green_Spot_POS
                     if(Connection.State == ConnectionState.Open)Connection.Close();
                 }
             }
+        }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            LoadList();
         }
     }
 }

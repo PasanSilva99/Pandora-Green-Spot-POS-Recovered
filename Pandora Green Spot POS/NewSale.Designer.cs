@@ -71,6 +71,7 @@
             this.roundPanel1 = new Pandora_Green_Spot_POS.RoundPanel();
             this.navPanel = new System.Windows.Forms.Panel();
             this.navigation = new Pandora_Green_Spot_POS.Navigation();
+            this.btn_reload = new PointOfSalesSystem.CustomButton();
             this.gradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menu_ham)).BeginInit();
@@ -93,6 +94,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btn_reload);
             this.panel1.Controls.Add(this.lbl_billID);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.btn_pay);
@@ -376,13 +378,13 @@
             this.btn_milkShakes.ButtonText = "Milk Shakes";
             this.btn_milkShakes.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(123)))), ((int)(((byte)(37)))));
             this.btn_milkShakes.defaultForeColor = System.Drawing.Color.White;
-            this.btn_milkShakes.Location = new System.Drawing.Point(310, 42);
+            this.btn_milkShakes.Location = new System.Drawing.Point(251, 41);
             this.btn_milkShakes.Name = "btn_milkShakes";
             this.btn_milkShakes.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btn_milkShakes.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_milkShakes.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btn_milkShakes.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_milkShakes.Size = new System.Drawing.Size(206, 49);
+            this.btn_milkShakes.Size = new System.Drawing.Size(136, 49);
             this.btn_milkShakes.TabIndex = 44;
             this.btn_milkShakes.textSize = 12;
             this.btn_milkShakes.Click += new System.EventHandler(this.btn_milkShakes_Click);
@@ -400,7 +402,7 @@
             this.btn_FruitJuice.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_FruitJuice.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btn_FruitJuice.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_FruitJuice.Size = new System.Drawing.Size(206, 49);
+            this.btn_FruitJuice.Size = new System.Drawing.Size(136, 49);
             this.btn_FruitJuice.TabIndex = 43;
             this.btn_FruitJuice.textSize = 12;
             this.btn_FruitJuice.Click += new System.EventHandler(this.btn_FruitJuice_Click);
@@ -553,9 +555,9 @@
             // 
             this.TB_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_search.Location = new System.Drawing.Point(556, 55);
+            this.TB_search.Location = new System.Drawing.Point(578, 55);
             this.TB_search.Name = "TB_search";
-            this.TB_search.Size = new System.Drawing.Size(190, 19);
+            this.TB_search.Size = new System.Drawing.Size(168, 19);
             this.TB_search.TabIndex = 29;
             this.TB_search.TextChanged += new System.EventHandler(this.TB_search_TextChanged);
             // 
@@ -566,9 +568,9 @@
             this.roundPanel3._CornerRadius = 20F;
             this.roundPanel3._Shadow = true;
             this.roundPanel3.BackColor = System.Drawing.Color.White;
-            this.roundPanel3.Location = new System.Drawing.Point(528, 36);
+            this.roundPanel3.Location = new System.Drawing.Point(556, 36);
             this.roundPanel3.Name = "roundPanel3";
-            this.roundPanel3.Size = new System.Drawing.Size(270, 54);
+            this.roundPanel3.Size = new System.Drawing.Size(242, 54);
             this.roundPanel3.TabIndex = 28;
             // 
             // roundPanel1
@@ -603,6 +605,24 @@
             this.navigation.Name = "navigation";
             this.navigation.Size = new System.Drawing.Size(150, 645);
             this.navigation.TabIndex = 0;
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.White;
+            this.btn_reload.ButtonFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ButtonText = "Reload";
+            this.btn_reload.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_reload.defaultForeColor = System.Drawing.Color.White;
+            this.btn_reload.Location = new System.Drawing.Point(422, 41);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btn_reload.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_reload.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btn_reload.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_reload.Size = new System.Drawing.Size(136, 49);
+            this.btn_reload.TabIndex = 66;
+            this.btn_reload.textSize = 12;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // NewSale
             // 
@@ -671,5 +691,6 @@
         private PointOfSalesSystem.CustomButton btn_pay;
         private System.Windows.Forms.Label lbl_billID;
         private System.Windows.Forms.Label label11;
+        private PointOfSalesSystem.CustomButton btn_reload;
     }
 }

@@ -34,6 +34,7 @@
             this.printPreviewMenuDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gradientPanel1 = new Pandora_Green_Spot_POS.GradientPanel();
+            this.lbl_chText = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.img_itemImage = new System.Windows.Forms.PictureBox();
             this.cb_itemCat = new System.Windows.Forms.ComboBox();
@@ -85,6 +86,7 @@
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(87)))), ((int)(((byte)(217)))));
             this.gradientPanel1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.gradientPanel1.Controls.Add(this.lbl_chText);
             this.gradientPanel1.Controls.Add(this.lbl_id);
             this.gradientPanel1.Controls.Add(this.img_itemImage);
             this.gradientPanel1.Controls.Add(this.cb_itemCat);
@@ -115,6 +117,17 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1047, 618);
             this.gradientPanel1.TabIndex = 0;
             // 
+            // lbl_chText
+            // 
+            this.lbl_chText.BackColor = System.Drawing.Color.White;
+            this.lbl_chText.Location = new System.Drawing.Point(767, 497);
+            this.lbl_chText.Name = "lbl_chText";
+            this.lbl_chText.Size = new System.Drawing.Size(236, 23);
+            this.lbl_chText.TabIndex = 24;
+            this.lbl_chText.Text = "Click to change image";
+            this.lbl_chText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_chText.Visible = false;
+            // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
@@ -133,6 +146,9 @@
             this.img_itemImage.Size = new System.Drawing.Size(240, 185);
             this.img_itemImage.TabIndex = 22;
             this.img_itemImage.TabStop = false;
+            this.img_itemImage.Click += new System.EventHandler(this.img_itemImage_Click);
+            this.img_itemImage.MouseEnter += new System.EventHandler(this.img_itemImage_MouseEnter);
+            this.img_itemImage.MouseLeave += new System.EventHandler(this.img_itemImage_MouseLeave);
             // 
             // cb_itemCat
             // 
@@ -404,6 +420,7 @@
             this.Controls.Add(this.gradientPanel1);
             this.Name = "ManageItems";
             this.Text = "ManageItems";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageItems_FormClosing);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_itemImage)).EndInit();
@@ -441,5 +458,6 @@
         private RoundPanel roundPanel4;
         private RoundPanel roundPanel3;
         private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.Label lbl_chText;
     }
 }
