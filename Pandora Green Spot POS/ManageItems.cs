@@ -208,5 +208,36 @@ namespace Pandora_Green_Spot_POS
         {
            // NewSale.;
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(con.State == ConnectionState.Closed)
+                    con.Open();
+                string qry = $"DELETE FROM Product WHERE ItemID = {int.Parse(lbl_id.Text)}";
+                SqlCommand cmd = new SqlCommand(qry, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Delete Success");
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+
+                tb_itemName.Clear();
+                img_itemImage.Image = null;
+                cb_itemCat.Text = null;
+                tb_itemPrice.Clear();
+                selImgPath = "Not Specified";
+                lbl_id.Text = "";
+                updateList();
+
+            }
+        }
     }
 }
