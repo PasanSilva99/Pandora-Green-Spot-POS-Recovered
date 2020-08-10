@@ -15,6 +15,8 @@ namespace Pandora_Green_Spot_POS
     public partial class AddProduct : Form
     {
         String imageUrl = null;
+        string imgdir = @"C:\PandoraGreenSpot\ItemImages";
+        string savedimagepath;
 
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PandoraGreenSpot\Pandora.mdf;Integrated Security=True;Connect Timeout=30");
 
@@ -38,8 +40,56 @@ namespace Pandora_Green_Spot_POS
                 {
                     imageUrl = openFile.FileName;
                     fillPictureBox(img_pic, (Bitmap)Image.FromFile(openFile.FileName));
+                    if (!Directory.Exists(imgdir))
+                    {
+                        Directory.CreateDirectory(imgdir);
+                    }
+                    string[] file = openFile.FileName.Split('.');
+                    savedimagepath = imgdir + @"/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + file[file.Length - 1];
+                    File.Copy(imageUrl, savedimagepath , true);
                 }
             }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (img_pic.Image != null)
+            {
+                
+                MemoryStream stream = new MemoryStream();
+                img_pic.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] img = stream.ToArray();
+
+                try
+                {
+                    
+                    if (connection.State == ConnectionState.Closed) connection.Open();
+                    String qry = "INSERT INTO Product (Product_name, Category, Product_Price, Image, ImagePath) VALUES (@name, @cat, @price , @image, @path)";
+                    SqlCommand cmd = new SqlCommand(qry, connection);
+                    cmd.Parameters.AddWithValue("@path", savedimagepath);
+                    cmd.Parameters.AddWithValue("@image", img);
+                    cmd.Parameters.AddWithValue("@price", tb_price.Text);
+                    cmd.Parameters.AddWithValue("@cat", cb_category.Text);
+                    cmd.Parameters.AddWithValue("@name", tb_name.Text);
+                    cmd.ExecuteNonQuery();
+                    
+                    MessageBox.Show("Saved Successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Image Null");
+            }
+
+            tb_name.Text = "";
+            img_pic.Image = null;
+            cb_category.Text = null;
+            tb_price.Text = null;
+
         }
         static public void fillPictureBox(PictureBox pbox, Bitmap bmp)
         {
@@ -68,38 +118,8 @@ namespace Pandora_Green_Spot_POS
             g.Dispose();
 
             pbox.Image = resized;
+            resized = null;
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            if (img_pic.Image != null)
-            {
-                byte[] arr = null;
-                FileStream fs = new FileStream(imageUrl, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                arr = br.ReadBytes((int)fs.Length);
-
-                try
-                {
-                    if (connection.State == ConnectionState.Closed) connection.Open();
-                    String qry = "INSERT INTO Product (Product_name, Category, Product_Price, Image) VALUES (@name, @cat, @price , @image)";
-                    SqlCommand cmd = new SqlCommand(qry, connection);
-                    cmd.Parameters.AddWithValue("@image", arr);
-                    cmd.Parameters.AddWithValue("@price", tb_price.Text);
-                    cmd.Parameters.AddWithValue("@cat", cb_category.Text);
-                    cmd.Parameters.AddWithValue("@name", tb_name.Text);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Saved Successfully");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-            else
-            {
-                MessageBox.Show("Image Null");
-            }
-        }
     }
 }

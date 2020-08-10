@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using PointOFSalesSystem;
+using System.Runtime.CompilerServices;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -45,7 +46,18 @@ namespace Pandora_Green_Spot_POS
             TB_qty.LostFocus += TB_qty_LostFocus;
             TB_dis.LostFocus += TB_dis_LostFocus;
 
+            LoadList();
+            
+        }
 
+        public void ReloadF()
+        {
+            this.Refresh();
+        }
+
+        private void LoadList()
+        {
+            ItemArea.Controls.Clear();
             //Loding the available item the the item list view
             try
             {
@@ -71,6 +83,9 @@ namespace Pandora_Green_Spot_POS
                 }
 
             }
+
+
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -508,7 +523,7 @@ namespace Pandora_Green_Spot_POS
                 {
                     String qry = $"Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category LIKE '%{TB_search.Text}%' OR Product_Name LIKE '%{TB_search.Text}%' OR Product_Price LIKE '%{TB_search.Text}%'";
                     SqlCommand cmd = new SqlCommand(qry, Connection);
-                    Connection.Open();
+                    if(Connection.State == ConnectionState.Closed) Connection.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 
                     while (sdr.Read())
@@ -526,7 +541,7 @@ namespace Pandora_Green_Spot_POS
                         block.MouseLeave += Block_MouseLeave;
                         ItemArea.Controls.Add(block);
                     }
-
+                    sdr.Close();
                 }
                 catch (Exception ex)
                 {
@@ -534,9 +549,15 @@ namespace Pandora_Green_Spot_POS
                 }
                 finally
                 {
-                    Connection.Close();
+                    
+                    if(Connection.State == ConnectionState.Open)Connection.Close();
                 }
             }
+        }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            LoadList();
         }
     }
 }
