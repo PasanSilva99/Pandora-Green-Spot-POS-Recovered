@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using PointOFSalesSystem;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using PointOFSalesSystem;
-using System.Runtime.CompilerServices;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -47,7 +40,7 @@ namespace Pandora_Green_Spot_POS
             TB_dis.LostFocus += TB_dis_LostFocus;
 
             LoadList();
-            
+
         }
 
         public void ReloadF()
@@ -114,7 +107,7 @@ namespace Pandora_Green_Spot_POS
                 qty++;
             }
             else
-            { 
+            {
                 qty = 1;
             }
             MaskClear(TB_name);
@@ -138,7 +131,7 @@ namespace Pandora_Green_Spot_POS
 
         private void TB_search_GotFocus(object sender, EventArgs e)
         {
-            if (TB_search.Text == "Search Items") 
+            if (TB_search.Text == "Search Items")
             {
                 MaskClear(TB_search);
             }
@@ -205,7 +198,7 @@ namespace Pandora_Green_Spot_POS
             if (TB_name.Text == "Enter Item Name")
             {
                 MaskClear(TB_name);
-            } 
+            }
 
         }
 
@@ -248,7 +241,7 @@ namespace Pandora_Green_Spot_POS
 
         private void NewSale_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
@@ -284,7 +277,7 @@ namespace Pandora_Green_Spot_POS
                 this.Width = this.Width - 150;
 
             }
-            
+
         }
 
         /// <summary>
@@ -328,7 +321,7 @@ namespace Pandora_Green_Spot_POS
         /// <param name="e"></param>
         private void btn_addToBill_Click(object sender, EventArgs e)
         {
-            if(billArea.Controls.Count <1)
+            if (billArea.Controls.Count < 1)
             {
                 RefreshBill();
             }
@@ -336,7 +329,7 @@ namespace Pandora_Green_Spot_POS
             billItem bItem = new billItem();
             bItem.ItemName = TB_name.Text;
             bItem.ItemCat = cat;
-            
+
             bItem.ItemPrice = TB_price.Text;
             bItem.ItemQty = TB_qty.Text;
             bItem.Size = new Size(245, 45);
@@ -349,12 +342,12 @@ namespace Pandora_Green_Spot_POS
             {
                 String Qry = "INSERT INTO Bill (Bill_ID, ItemName, ItemCategory, ItemDiscount, ItemPrice, Qty, Total, Date, Time) " +
                 "VALUES (" +
-                BillID +","+
+                BillID + "," +
                 "'" + TB_name.Text + "'," +
                 "'" + cat + "'," +
-                TB_dis.Text +","+
-                TB_price.Text +","+
-                TB_qty.Text +","+
+                TB_dis.Text + "," +
+                TB_price.Text + "," +
+                TB_qty.Text + "," +
                 float.Parse(TB_qty.Text) * float.Parse(TB_price.Text) +
                 ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "'" +
                 ",'" + DateTime.Now.ToString("hh:mm:ss") + "')";
@@ -365,7 +358,7 @@ namespace Pandora_Green_Spot_POS
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -373,7 +366,7 @@ namespace Pandora_Green_Spot_POS
             {
                 Connection.Close();
             }
-            
+
             //calculate the total from the bill
             try
             {
@@ -424,8 +417,8 @@ namespace Pandora_Green_Spot_POS
         {
             PayScreen pay = new PayScreen();
             pay.Total = billTotal;
-            
-            if(pay.ShowDialog() == DialogResult.Yes)
+
+            if (pay.ShowDialog() == DialogResult.Yes)
             {
                 BillID = 0;
                 lbl_billTotal.Text = "0";
@@ -523,7 +516,7 @@ namespace Pandora_Green_Spot_POS
                 {
                     String qry = $"Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category LIKE '%{TB_search.Text}%' OR Product_Name LIKE '%{TB_search.Text}%' OR Product_Price LIKE '%{TB_search.Text}%'";
                     SqlCommand cmd = new SqlCommand(qry, Connection);
-                    if(Connection.State == ConnectionState.Closed) Connection.Open();
+                    if (Connection.State == ConnectionState.Closed) Connection.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 
                     while (sdr.Read())
@@ -549,8 +542,8 @@ namespace Pandora_Green_Spot_POS
                 }
                 finally
                 {
-                    
-                    if(Connection.State == ConnectionState.Open)Connection.Close();
+
+                    if (Connection.State == ConnectionState.Open) Connection.Close();
                 }
             }
         }

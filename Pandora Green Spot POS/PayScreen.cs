@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
 namespace Pandora_Green_Spot_POS
@@ -18,7 +10,7 @@ namespace Pandora_Green_Spot_POS
         public PayScreen()
         {
             InitializeComponent();
-            
+
         }
 
         private void PayScreen_Load(object sender, EventArgs e)

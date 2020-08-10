@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
@@ -30,13 +23,13 @@ namespace Pandora_Green_Spot_POS
         private void TB_Password_LostFocus(object sender, EventArgs e)
         {
             if (TB_Password.Text == "")
-            MaskAdd(TB_Password, "Enter Password", true);
+                MaskAdd(TB_Password, "Enter Password", true);
         }
 
         private void TB_UserName_LostFocus(object sender, EventArgs e)
         {
-            if(TB_UserName.Text == "")
-            MaskAdd(TB_UserName, "Enter UserName");
+            if (TB_UserName.Text == "")
+                MaskAdd(TB_UserName, "Enter UserName");
         }
 
         private void customButton2_Click(object sender, EventArgs e)
@@ -51,14 +44,14 @@ namespace Pandora_Green_Spot_POS
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if(TB_UserName.Text != null && TB_UserName.Text != null)
+            if (TB_UserName.Text != null && TB_UserName.Text != null)
             {
                 String LoginCheck = "SELECT * FROM Employee WHERE userName = '" + TB_UserName.Text + "' AND password='" + TB_Password.Text + "' ";
                 SqlDataAdapter LoginAdaptor = new SqlDataAdapter(LoginCheck, connection);
                 DataTable userTb = new DataTable();
                 LoginAdaptor.Fill(userTb);
 
-                if(userTb.Rows.Count == 1)
+                if (userTb.Rows.Count == 1)
                 {
                     //Login Successfull
                     NewSale newSale = new NewSale();
@@ -70,7 +63,7 @@ namespace Pandora_Green_Spot_POS
                     //not a successfull login
                     MessageBox.Show("Not not not not");
                 }
-                
+
             }
             else
             {
@@ -97,8 +90,8 @@ namespace Pandora_Green_Spot_POS
         /// <param name="e"></param>
         private void TextBox_GotFocus1(object sender, EventArgs e)
         {
-            if((sender as TextBox).Text == "Enter UserName")
-            MaskClear((sender as TextBox));
+            if ((sender as TextBox).Text == "Enter UserName")
+                MaskClear((sender as TextBox));
         }
 
         /// <summary>

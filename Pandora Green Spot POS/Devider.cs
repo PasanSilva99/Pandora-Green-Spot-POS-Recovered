@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -24,11 +17,11 @@ namespace Pandora_Green_Spot_POS
             gr.SmoothingMode = SmoothingMode.AntiAlias;
 
             Color shadow = Color.FromArgb(00, 16, 16, 16);
-            for (int i = 0; i <10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 using (Pen pen = new Pen(Color.FromArgb(00 + i * 2, shadow), 1.2f))
-                    gr.DrawLine(pen, new PointF(0, this.Height / 2 + (10-i)), new PointF(this.Width, this.Height / 2 + (10-i)));
-                
+                    gr.DrawLine(pen, new PointF(0, this.Height / 2 + (10 - i)), new PointF(this.Width, this.Height / 2 + (10 - i)));
+
             }
             gr.DrawLine(new Pen(Color.LightGray), new PointF(0, this.Height / 2), new PointF(this.Width, this.Height / 2));
 

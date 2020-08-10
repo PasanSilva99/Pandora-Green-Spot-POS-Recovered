@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -34,7 +29,7 @@ namespace Pandora_Green_Spot_POS
 
         private void btn_picSave_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFile = new OpenFileDialog() { Filter = "Image Files | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"})
+            using (OpenFileDialog openFile = new OpenFileDialog() { Filter = "Image Files | *.jpg; *.jpeg; *.jpe; *.jfif; *.png" })
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
@@ -46,7 +41,7 @@ namespace Pandora_Green_Spot_POS
                     }
                     string[] file = openFile.FileName.Split('.');
                     savedimagepath = imgdir + @"/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + file[file.Length - 1];
-                    File.Copy(imageUrl, savedimagepath , true);
+                    File.Copy(imageUrl, savedimagepath, true);
                 }
             }
         }
@@ -55,14 +50,14 @@ namespace Pandora_Green_Spot_POS
         {
             if (img_pic.Image != null)
             {
-                
+
                 MemoryStream stream = new MemoryStream();
                 img_pic.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] img = stream.ToArray();
 
                 try
                 {
-                    
+
                     if (connection.State == ConnectionState.Closed) connection.Open();
                     String qry = "INSERT INTO Product (Product_name, Category, Product_Price, Image, ImagePath) VALUES (@name, @cat, @price , @image, @path)";
                     SqlCommand cmd = new SqlCommand(qry, connection);
@@ -72,7 +67,7 @@ namespace Pandora_Green_Spot_POS
                     cmd.Parameters.AddWithValue("@cat", cb_category.Text);
                     cmd.Parameters.AddWithValue("@name", tb_name.Text);
                     cmd.ExecuteNonQuery();
-                    
+
                     MessageBox.Show("Saved Successfully");
                 }
                 catch (Exception ex)

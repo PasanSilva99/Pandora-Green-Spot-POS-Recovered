@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GraphicsExtention;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-using GraphicsExtention;
+using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -73,7 +66,7 @@ namespace Pandora_Green_Spot_POS
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    using (Pen pen = new Pen(Color.FromArgb(00 + i*2, shadow), 1.2f))
+                    using (Pen pen = new Pen(Color.FromArgb(00 + i * 2, shadow), 1.2f))
 
                         graphics.DrawRoundedRectangle(pen, this.ClientRectangle.X + i,
                                            this.ClientRectangle.Y + i, this.Width - i * 2, this.Height - i * 2, _cornerRadius);
@@ -83,8 +76,8 @@ namespace Pandora_Green_Spot_POS
             SolidBrush brush = new SolidBrush(_backColor);
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
             graphics.FillRoundedRectangle(brush, 10, 10, this.Width - 20, this.Height - 20, _cornerRadius);
-            if(_BorderColor != null)
-            graphics.DrawRoundedRectangle(new Pen(_BorderColor), 10, 10, this.Width - 20, this.Height - 20, _cornerRadius);
+            if (_BorderColor != null)
+                graphics.DrawRoundedRectangle(new Pen(_BorderColor), 10, 10, this.Width - 20, this.Height - 20, _cornerRadius);
 
         }
 

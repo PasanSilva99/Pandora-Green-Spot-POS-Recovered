@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
-namespace Pandora_Green_Spot_POS 
+namespace Pandora_Green_Spot_POS
 {
     class GradientPanel : Panel
     {
@@ -22,7 +17,7 @@ namespace Pandora_Green_Spot_POS
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
-            LinearGradientBrush brush = new LinearGradientBrush(new PointF(0,0), new PointF(Width,Height), Color1, Color2);
+            LinearGradientBrush brush = new LinearGradientBrush(new PointF(0, 0), new PointF(Width, Height), Color1, Color2);
             gr.FillRectangle(brush, ClientRectangle);
 
         }

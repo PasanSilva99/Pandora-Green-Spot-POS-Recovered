@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GraphicsExtention;
+using System;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
-using GraphicsExtention;
 
 namespace PointOFSalesSystem
 {
@@ -20,8 +13,8 @@ namespace PointOFSalesSystem
         private bool _shadow = true;
         private float _cornerRadius = 20;
 
-        public String itemPrice{get; set;}
-        
+        public String itemPrice { get; set; }
+
 
         public bool _Shadow
         {
@@ -85,7 +78,7 @@ namespace PointOFSalesSystem
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
 
-            Rectangle rectangle = new Rectangle(2,this.Height - 30, this.Width - 4, 20);
+            Rectangle rectangle = new Rectangle(2, this.Height - 30, this.Width - 4, 20);
             Rectangle rectBrand = new Rectangle(2, 12, this.Width - 10, 10);
 
             Color shadow = Color.FromArgb(00, 16, 16, 16);
@@ -102,7 +95,7 @@ namespace PointOFSalesSystem
             }
             g.DrawString(_brandName, this.Font, new SolidBrush(ForeColor), rectBrand, format);
             g.DrawImage(_itemImage, 15, 25, this.Width - 30, Height - 55);
-            
+
             g.DrawString(_itemName, this.Font, new SolidBrush(ForeColor), rectangle, format);
             if (_BorderColor != null)
                 g.DrawRoundedRectangle(new Pen(_BorderColor), 10, 10, this.Width - 20, this.Height - 20, _cornerRadius);

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -22,7 +14,7 @@ namespace Pandora_Green_Spot_POS
         public int ItemID { get; set; }
         public string ImagePath { get; set; }
 
-        
+
 
         public ListItemManage()
         {
@@ -47,7 +39,7 @@ namespace Pandora_Green_Spot_POS
             gr.DrawImage(itemImage, ImageArea);
             gr.DrawString(itemName, NameFont, Brushes.Black, this.Height, 10);
             gr.DrawString(itemCategory, NameFont, Brushes.Black, this.Height + 15, 40);
-            gr.DrawString("Popularity "+popularity.ToString()+"%", NameFont, Brushes.Black, PriceRect, popuFormat);
+            gr.DrawString("Popularity " + popularity.ToString() + "%", NameFont, Brushes.Black, PriceRect, popuFormat);
             gr.DrawString("Rs. " + itemPrice.ToString("F2"), NameFont, Brushes.Black, PriceRect, PriceFormat);
             gr.DrawLine(Pens.Gray, new PointF(0, this.Height - 1), new PointF(this.Width, this.Height - 1));
             //

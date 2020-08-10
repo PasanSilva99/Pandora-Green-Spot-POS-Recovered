@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
@@ -95,15 +88,15 @@ namespace Pandora_Green_Spot_POS
         #region Mouse Click Reports
         private void Rp_reports_Click(object sender, EventArgs e)
         {
-            if(CurrentPage == Page.ReportsPage)
+            if (CurrentPage == Page.ReportsPage)
             {
                 //Youre in the reports page
             }
             else
             {
-                Reports re = new Reports();
-                re.StartPosition = FormStartPosition.CenterParent;
-                re.Show();
+                //Reports re = new Reports();
+                //re.StartPosition = FormStartPosition.CenterParent;
+                //re.Show();
             }
         }
 
@@ -126,7 +119,7 @@ namespace Pandora_Green_Spot_POS
 
         private void Lbl_reports_MouseLeave(object sender, EventArgs e)
         {
-            Rp_reports_MouseLeave(this, new EventArgs()); 
+            Rp_reports_MouseLeave(this, new EventArgs());
         }
 
         private void Img_reports_MouseLeave(object sender, EventArgs e)
@@ -159,7 +152,7 @@ namespace Pandora_Green_Spot_POS
         private void Rp_AddNew_Click(object sender, EventArgs e)
         {
             //Validation Code
-            if(CurrentPage == Page.AddNewPage)
+            if (CurrentPage == Page.AddNewPage)
             {
                 //You re in this page
             }
@@ -223,7 +216,7 @@ namespace Pandora_Green_Spot_POS
         #region mouse click new sale
         private void Rp_newSale_Click(object sender, EventArgs e)
         {
-            if(CurrentPage == Page.newSalePage)
+            if (CurrentPage == Page.newSalePage)
             {
                 //You are in this page
             }

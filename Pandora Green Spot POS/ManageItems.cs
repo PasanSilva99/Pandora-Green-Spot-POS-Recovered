@@ -1,28 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pandora_Green_Spot_POS
 {
     public partial class ManageItems : Form
     {
+        //Created the SQL Connection
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PandoraGreenSpot\Pandora.mdf;Integrated Security=True;Connect Timeout=30");
 
+        //Set the default image path as Not Specified
         string selImgPath = "Not Specified";
+
+        //This is the Directory for saving the image file
+        //If there is no such directory, Code will automatically create a one.
         string imgdir = @"C:\PandoraGreenSpot\ItemImages";
+
+        //Saved image path
         string savedpath = "";
         public ManageItems()
         {
             InitializeComponent();
-            
+
             //List the items
             updateList();
         }
@@ -131,12 +133,12 @@ namespace Pandora_Green_Spot_POS
             selImgPath = "Not Specified";
             lbl_id.Text = "";
             updateList();
-            
+
         }
 
         private void img_itemImage_Click(object sender, EventArgs e)
         {
-            
+
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Image Files | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             openFile.Multiselect = false;
@@ -145,7 +147,7 @@ namespace Pandora_Green_Spot_POS
             {
                 string url = openFile.FileName;
                 fillPictureBox(img_itemImage, (Bitmap)Image.FromFile(url));
-                if(!Directory.Exists(imgdir))
+                if (!Directory.Exists(imgdir))
                 {
                     Directory.CreateDirectory(imgdir);
                 }
@@ -153,7 +155,7 @@ namespace Pandora_Green_Spot_POS
                 savedpath = imgdir + @"/" + DateTime.Now.ToString("yyyyMMddhhss") + "." + file[file.Length - 1];
                 File.Copy(url, savedpath, true);
                 File.Delete(selImgPath);
-                
+
             }
         }
 
@@ -174,8 +176,8 @@ namespace Pandora_Green_Spot_POS
             {
                 String qry = "Select Product_Name, Category, Product_Price, Image, ItemID , ImagePath FROM Product";
                 SqlCommand cmd = new SqlCommand(qry, con);
-                if(con.State == ConnectionState.Closed)
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                    con.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
 
                 while (sdr.Read())
@@ -199,21 +201,21 @@ namespace Pandora_Green_Spot_POS
             }
             finally
             {
-                if(con.State == ConnectionState.Open)
-                con.Close();
+                if (con.State == ConnectionState.Open)
+                    con.Close();
             }
         }
 
         private void ManageItems_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // NewSale.;
+            // NewSale.;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
             try
             {
-                if(con.State == ConnectionState.Closed)
+                if (con.State == ConnectionState.Closed)
                     con.Open();
                 string qry = $"DELETE FROM Product WHERE ItemID = {int.Parse(lbl_id.Text)}";
                 SqlCommand cmd = new SqlCommand(qry, con);

@@ -128,7 +128,7 @@ namespace PointOfSalesSystem
             set
             {
                 _onClickBackColor = value;
-                this.Invalidate(); 
+                this.Invalidate();
             }
         }
 
@@ -136,7 +136,7 @@ namespace PointOfSalesSystem
         public CustomButton()
         {
             InitializeComponent();
-             
+
         }
 
         protected override void OnPaint(PaintEventArgs e)
