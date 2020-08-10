@@ -250,6 +250,7 @@
             this.btn_delete.Size = new System.Drawing.Size(119, 48);
             this.btn_delete.TabIndex = 16;
             this.btn_delete.textSize = 0;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // roundPanel6
             // 
