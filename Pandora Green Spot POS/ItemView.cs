@@ -14,6 +14,7 @@ namespace PointOFSalesSystem
 {
     public partial class ItemView : UserControl
     {
+        public int ItemID { get; set; }
         private string _itemName = "Item Name";
         private string _brandName = "Brand Name";
         private Image _itemImage;

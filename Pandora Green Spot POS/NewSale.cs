@@ -54,14 +54,14 @@ namespace Pandora_Green_Spot_POS
         {
             this.Refresh();
         }
-
+        int itemID;
         private void LoadList()
         {
             ItemArea.Controls.Clear();
             //Loding the available item the the item list view
             try
             {
-                String qry = "Select Product_Name, Category, Product_Price, Image FROM Product";
+                String qry = "Select Product_Name, Category, Product_Price, Image, ItemID FROM Product";
                 SqlCommand cmd = new SqlCommand(qry, Connection);
                 Connection.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
@@ -76,6 +76,7 @@ namespace Pandora_Green_Spot_POS
                     block.Width = 150;
                     block.Height = 150;
                     block._BorderColor = Color.LightGray;
+                    block.ItemID = sdr.GetInt32(4);
                     block.Click += Block_Click;
                     block.MouseEnter += Block_MouseEnter;
                     block.MouseLeave += Block_MouseLeave;
@@ -109,6 +110,7 @@ namespace Pandora_Green_Spot_POS
         String cat = null;
         private void Block_Click(object sender, EventArgs e)
         {
+            itemID = (sender as ItemView).ItemID;
             if (TB_name.Text == (sender as ItemView).ItemName && TB_price.Text == (sender as ItemView).itemPrice)
             {
                 qty++;
@@ -347,9 +349,10 @@ namespace Pandora_Green_Spot_POS
             //Add item to the bill
             try
             {
-                String Qry = "INSERT INTO Bill (Bill_ID, ItemName, ItemCategory, ItemDiscount, ItemPrice, Qty, Total, Date, Time) " +
+                String Qry = "INSERT INTO Bill (Bill_ID, ItemID , ItemName, ItemCategory, ItemDiscount, ItemPrice, Qty, Total, Date, Time) " +
                 "VALUES (" +
                 BillID +","+
+                itemID + "," +
                 "'" + TB_name.Text + "'," +
                 "'" + cat + "'," +
                 TB_dis.Text +","+
@@ -362,7 +365,7 @@ namespace Pandora_Green_Spot_POS
                 SqlCommand cmd = new SqlCommand(Qry, Connection);
                 Connection.Open();
                 cmd.ExecuteNonQuery();
-
+                itemID = 0; 
 
             }
             catch(Exception ex)

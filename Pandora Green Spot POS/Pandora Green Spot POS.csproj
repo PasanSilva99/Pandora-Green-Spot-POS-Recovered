@@ -185,6 +185,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoundPanel.resx">
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </EmbeddedResource>
