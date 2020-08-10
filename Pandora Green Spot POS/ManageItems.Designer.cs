@@ -65,7 +65,6 @@
             // 
             // printMenuDoc
             // 
-            this.printMenuDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printMenuDoc_PrintPage);
             // 
             // printPreviewMenuDialog
             // 
@@ -146,9 +145,6 @@
             this.img_itemImage.Size = new System.Drawing.Size(240, 185);
             this.img_itemImage.TabIndex = 22;
             this.img_itemImage.TabStop = false;
-            this.img_itemImage.Click += new System.EventHandler(this.img_itemImage_Click);
-            this.img_itemImage.MouseEnter += new System.EventHandler(this.img_itemImage_MouseEnter);
-            this.img_itemImage.MouseLeave += new System.EventHandler(this.img_itemImage_MouseLeave);
             // 
             // cb_itemCat
             // 
@@ -232,7 +228,6 @@
             this.btn_save.Size = new System.Drawing.Size(119, 48);
             this.btn_save.TabIndex = 17;
             this.btn_save.textSize = 0;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_delete
             // 
@@ -250,7 +245,6 @@
             this.btn_delete.Size = new System.Drawing.Size(119, 48);
             this.btn_delete.TabIndex = 16;
             this.btn_delete.textSize = 0;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // roundPanel6
             // 
@@ -338,7 +332,6 @@
             this.btn_printMenu.Size = new System.Drawing.Size(178, 48);
             this.btn_printMenu.TabIndex = 7;
             this.btn_printMenu.textSize = 0;
-            this.btn_printMenu.Click += new System.EventHandler(this.btn_printMenu_Click);
             // 
             // itemArea
             // 
