@@ -108,3 +108,25 @@ C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\ob
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe.config
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.pdb
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csprojAssemblyReference.cache
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.AddProduct.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.billItem.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.CustomButton.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Devider.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ItemBlock.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ItemView.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ListItemManage.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Login.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ManageItems.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Navigation.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.NewSale.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.PayScreen.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.Properties.Resources.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.RoundPanel.resources
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.GenerateResource.cache
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
+D:\He heee\書類\University Of Plymouth\Assignment\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
