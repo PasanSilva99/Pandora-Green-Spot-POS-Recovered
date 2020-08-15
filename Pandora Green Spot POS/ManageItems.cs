@@ -183,6 +183,10 @@ namespace Pandora_Green_Spot_POS
 
         }
 
+        
+
+        
+
         /// <summary>
         /// Update the item list
         /// </summary>
@@ -201,7 +205,8 @@ namespace Pandora_Green_Spot_POS
                         "Category, " + //2
                         "Product_price," + //3
                         "Image," + //4
-                        "ImagePath " + //5
+                        "ImagePath, " + //5
+                        "Popularity " + //6
                     "FROM " +
                         "Product";
                 SqlCommand cmd = new SqlCommand(ListUpdateQry, con);
@@ -218,6 +223,7 @@ namespace Pandora_Green_Spot_POS
                     ListItem.itemPrice = Convert.ToDouble(sdr.GetString(3));
                     ListItem.itemImage = Image.FromStream(sdr.GetStream(4));
                     ListItem.ImagePath = sdr.GetString(5);
+                    ListItem.popularity = Convert.ToDouble(sdr.GetString(6));
                     ListItem.MouseClick += ListItem_MouseClick;
                     ListItem.MouseEnter += ListItem_MouseEnter;
                     ListItem.MouseLeave += ListItem_MouseLeave;

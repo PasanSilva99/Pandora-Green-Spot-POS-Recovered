@@ -121,5 +121,9 @@ namespace Pandora_Green_Spot_POS
             resized = null;
         }
 
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

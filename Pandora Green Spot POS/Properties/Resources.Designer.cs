@@ -71,6 +71,15 @@ namespace Pandora_Green_Spot_POS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to n.
+        /// </summary>
+        internal static string LoginState {
+            get {
+                return ResourceManager.GetString("LoginState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap manage {
