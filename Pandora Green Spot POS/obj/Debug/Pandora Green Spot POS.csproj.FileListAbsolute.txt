@@ -108,3 +108,8 @@ C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\ob
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csproj.CoreCompileInputs.cache
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe.manifest
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.application
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe.manifest
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.application
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.check.resources

@@ -30,6 +30,7 @@
         {
             this.gradientPanel1 = new Pandora_Green_Spot_POS.GradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_reload = new PointOfSalesSystem.CustomButton();
             this.lbl_billID = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_pay = new PointOfSalesSystem.CustomButton();
@@ -71,7 +72,7 @@
             this.roundPanel1 = new Pandora_Green_Spot_POS.RoundPanel();
             this.navPanel = new System.Windows.Forms.Panel();
             this.navigation = new Pandora_Green_Spot_POS.Navigation();
-            this.btn_reload = new PointOfSalesSystem.CustomButton();
+            this.lbl_delete = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menu_ham)).BeginInit();
@@ -94,6 +95,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbl_delete);
             this.panel1.Controls.Add(this.btn_reload);
             this.panel1.Controls.Add(this.lbl_billID);
             this.panel1.Controls.Add(this.label11);
@@ -139,6 +141,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1137, 645);
             this.panel1.TabIndex = 28;
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.BackColor = System.Drawing.Color.White;
+            this.btn_reload.ButtonFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ButtonText = "Reload";
+            this.btn_reload.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_reload.defaultForeColor = System.Drawing.Color.White;
+            this.btn_reload.Location = new System.Drawing.Point(422, 41);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btn_reload.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_reload.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btn_reload.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_reload.Size = new System.Drawing.Size(136, 49);
+            this.btn_reload.TabIndex = 66;
+            this.btn_reload.textSize = 12;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // lbl_billID
             // 
@@ -272,6 +292,9 @@
             this.billArea.Name = "billArea";
             this.billArea.Size = new System.Drawing.Size(271, 338);
             this.billArea.TabIndex = 54;
+            this.billArea.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.billArea_ControlRemoved);
+            this.billArea.MouseEnter += new System.EventHandler(this.billArea_MouseEnter);
+            this.billArea.MouseLeave += new System.EventHandler(this.billArea_MouseLeave);
             // 
             // devider3
             // 
@@ -606,23 +629,17 @@
             this.navigation.Size = new System.Drawing.Size(150, 645);
             this.navigation.TabIndex = 0;
             // 
-            // btn_reload
+            // lbl_delete
             // 
-            this.btn_reload.BackColor = System.Drawing.Color.White;
-            this.btn_reload.ButtonFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.ButtonText = "Reload";
-            this.btn_reload.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_reload.defaultForeColor = System.Drawing.Color.White;
-            this.btn_reload.Location = new System.Drawing.Point(422, 41);
-            this.btn_reload.Name = "btn_reload";
-            this.btn_reload.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btn_reload.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_reload.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btn_reload.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_reload.Size = new System.Drawing.Size(136, 49);
-            this.btn_reload.TabIndex = 66;
-            this.btn_reload.textSize = 12;
-            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            this.lbl_delete.BackColor = System.Drawing.Color.White;
+            this.lbl_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_delete.Location = new System.Drawing.Point(847, 438);
+            this.lbl_delete.Name = "lbl_delete";
+            this.lbl_delete.Size = new System.Drawing.Size(261, 16);
+            this.lbl_delete.TabIndex = 67;
+            this.lbl_delete.Text = "Double click to delete";
+            this.lbl_delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_delete.Visible = false;
             // 
             // NewSale
             // 
@@ -692,5 +709,6 @@
         private System.Windows.Forms.Label lbl_billID;
         private System.Windows.Forms.Label label11;
         private PointOfSalesSystem.CustomButton btn_reload;
+        private System.Windows.Forms.Label lbl_delete;
     }
 }

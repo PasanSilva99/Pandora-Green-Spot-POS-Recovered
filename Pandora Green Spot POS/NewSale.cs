@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using PointOFSalesSystem;
 using System.Runtime.CompilerServices;
+using System.Data.SqlTypes;
 
 namespace Pandora_Green_Spot_POS
 {
@@ -322,7 +323,7 @@ namespace Pandora_Green_Spot_POS
 
             pbox.Image = resized;
         }
-        double billTotal;
+        double billTotal = 0;
         /// <summary>
         /// Adds Items to the bill 
         /// </summary>
@@ -342,6 +343,8 @@ namespace Pandora_Green_Spot_POS
             bItem.ItemPrice = TB_price.Text;
             bItem.ItemQty = TB_qty.Text;
             bItem.Size = new Size(245, 45);
+            bItem.DoubleClick += BItem_DoubleClick;
+            
             billArea.Controls.Add(bItem);
             this.ActiveControl = bItem;
             billArea.ScrollControlIntoView(bItem);
@@ -376,29 +379,11 @@ namespace Pandora_Green_Spot_POS
             {
                 Connection.Close();
             }
-            
-            //calculate the total from the bill
-            try
-            {
-                String qry = "SELECT SUM(Total) FROM Bill WHERE Bill_ID = '" + BillID + "'";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(qry, Connection);
-                DataTable vTable = new DataTable();
-                dataAdapter.Fill(vTable);
-                billTotal = Convert.ToDouble(vTable.Rows[0][0]);
-                lbl_billTotal.Text = "Rs. " + billTotal.ToString("F2");
 
+            CalculateTotal();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in Calculating Sum\n" + ex.Message);
-            }
-            finally
-            {
-                if (Connection.State == ConnectionState.Open)
-                    Connection.Close();
-                cat = null;
-            }
+            ReportAnalysis analysis = new ReportAnalysis();
+            analysis.UpdatePopularity();
 
             TB_dis.Clear();
             TB_name.Clear();
@@ -411,23 +396,75 @@ namespace Pandora_Green_Spot_POS
             MaskAdd(TB_search, "Search Items");
         }
 
+        private void CalculateTotal()
+        {
+            //calculate the total from the bill
+            try
+            {
+                String qry = "SELECT SUM(Total) FROM Bill WHERE Bill_ID = '" + BillID + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(qry, Connection);
+                DataTable vTable = new DataTable();
+                dataAdapter.Fill(vTable);
+                billTotal = Convert.ToDouble(vTable.Rows[0][0]);
+                
+
+
+            }
+            catch (SqlNullValueException db)
+            {
+               
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error in Calculating Sum\n" + ex.Message);
+                billTotal = 0;
+            }
+            finally
+            {
+                lbl_billTotal.Text = "Rs. " + billTotal.ToString("F2");
+                if (Connection.State == ConnectionState.Open)
+                    Connection.Close();
+                cat = null;
+            }
+        }
+
+        private void BItem_DoubleClick(object sender, EventArgs e)
+        {
+            string qry = $"DELETE FROM Bill WHERE ItemName = '{(sender as billItem).ItemName}' AND Total = '{(sender as billItem).ItemPrice}' AND Bill_Id = '{int.Parse(lbl_billID.Text)}'";
+            SqlCommand cmd = new SqlCommand(qry, Connection);
+            if(Connection.State == ConnectionState.Closed)
+            Connection.Open();
+            cmd.ExecuteNonQuery();
+            if(Connection.State == ConnectionState.Open)
+            Connection.Close();
+            billArea.Controls.Remove((sender as billItem));
+            CalculateTotal();
+            if (billArea.Controls.Count == 0)
+            {
+                billTotal = 0;
+                lbl_billTotal.Text = "Rs.  " + billTotal.ToString("F2");
+            }
+        }
+
         /// <summary>
         /// Genorates the bill ID
         /// </summary>
         private void RefreshBill()
         {
-            BillNum++;
-            String newBillId = DateTime.Now.ToString("mmdd") + RandomNumber().ToString() + BillNum.ToString();
-            BillID = Convert.ToInt64(newBillId);
-            lbl_billID.Text = newBillId;
-            lbl_billDate.Text = DateTime.Now.ToString("dd-mm-yyyy");
+            BillNum++;  // Increase the bill number fro the session
+            String newBillId = DateTime.Now.ToString("mmdd") + RandomNumber().ToString() + BillNum.ToString();  //  Genorate a bill ID
+            BillID = Convert.ToInt64(newBillId); //Save the bill ID as a LONG
+            lbl_billID.Text = newBillId;  // set the bill id text
+            lbl_billDate.Text = DateTime.Now.ToString("dd-MM-yyyy");  // sets the date
         }
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
+            // show the payment bill
             PayScreen pay = new PayScreen();
             pay.Total = billTotal;
             
+            // if the payment compleate, reset the bill.
             if(pay.ShowDialog() == DialogResult.Yes)
             {
                 BillID = 0;
@@ -443,13 +480,16 @@ namespace Pandora_Green_Spot_POS
             ItemArea.Controls.Clear();
             try
             {
+                // the quary for selecting all available fruitjuices in the database.
                 String qry = "Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category = 'Fruit juice'";
                 SqlCommand cmd = new SqlCommand(qry, Connection);
+                if(Connection.State == ConnectionState.Closed) // if the connection state is close, open it.
                 Connection.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
 
                 while (sdr.Read())
                 {
+                    // Create a new control with ItemViewClass and set its prperties
                     ItemView block = new ItemView();
                     block.ItemName = sdr.GetString(0);
                     block.ItemImage = Image.FromStream(sdr.GetStream(3));
@@ -461,16 +501,19 @@ namespace Pandora_Green_Spot_POS
                     block.Click += Block_Click;
                     block.MouseEnter += Block_MouseEnter;
                     block.MouseLeave += Block_MouseLeave;
+                    // add the created control to the ItemArea(FlowLayoutPanel)
                     ItemArea.Controls.Add(block);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                // if it catches an error, show it. 
+                MessageBox.Show("Error loading fruit juices. Please ontact your IT Administrator \nDetails : " + ex.Message);
             }
             finally
             {
+                if(Connection.State == ConnectionState.Open)
                 Connection.Close();
             }
         }
@@ -480,13 +523,18 @@ namespace Pandora_Green_Spot_POS
             ItemArea.Controls.Clear();
             try
             {
+                //The quary for load all the milkshakes avaliable
                 String qry = "Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category = 'Milkshake'";
                 SqlCommand cmd = new SqlCommand(qry, Connection);
-                Connection.Open();
+                //if the connection is closed, open the connection
+                if(Connection.State == ConnectionState.Closed)
+                    Connection.Open();
+
                 SqlDataReader sdr = cmd.ExecuteReader();
 
                 while (sdr.Read())
                 {
+                    // create a new control by ItemView class and load it to the ItemArea(Flow layout pannel)
                     ItemView block = new ItemView();
                     block.ItemName = sdr.GetString(0);
                     block.ItemImage = Image.FromStream(sdr.GetStream(3));
@@ -498,16 +546,19 @@ namespace Pandora_Green_Spot_POS
                     block.Click += Block_Click;
                     block.MouseEnter += Block_MouseEnter;
                     block.MouseLeave += Block_MouseLeave;
+                    // load the created control to the ItemArea(Flow Layout Panel)
                     ItemArea.Controls.Add(block);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                // if catches an error, show it.
+                MessageBox.Show("Error loding milkshakes. Please contact your IT Administraor\nDetails : " + ex.Message);
             }
             finally
             {
+                if(Connection.State == ConnectionState.Open)  // if the connection is open, closeit.
                 Connection.Close();
             }
         }
@@ -524,13 +575,15 @@ namespace Pandora_Green_Spot_POS
                 ItemArea.Controls.Clear();
                 try
                 {
+                    //Quary for load data where the search match
                     String qry = $"Select Product_Name, Category, Product_Price, Image FROM Product WHERE Category LIKE '%{TB_search.Text}%' OR Product_Name LIKE '%{TB_search.Text}%' OR Product_Price LIKE '%{TB_search.Text}%'";
                     SqlCommand cmd = new SqlCommand(qry, Connection);
-                    if(Connection.State == ConnectionState.Closed) Connection.Open();
+                    if(Connection.State == ConnectionState.Closed) Connection.Open();  // i conection isnot opened. open the connection
                     SqlDataReader sdr = cmd.ExecuteReader();
 
-                    while (sdr.Read())
+                    while (sdr.Read())  // while sdr read the data
                     {
+                        // create a ne control by a ItemView Class and set its properties. 
                         ItemView block = new ItemView();
                         block.ItemName = sdr.GetString(0);
                         block.ItemImage = Image.FromStream(sdr.GetStream(3));
@@ -542,17 +595,18 @@ namespace Pandora_Green_Spot_POS
                         block.Click += Block_Click;
                         block.MouseEnter += Block_MouseEnter;
                         block.MouseLeave += Block_MouseLeave;
+                        //add the created control to the ItemArea(Flow layut panel)
                         ItemArea.Controls.Add(block);
                     }
-                    sdr.Close();
+                    sdr.Close(); //close the data reader.
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Error on loading the bill. Please contact your IT Administrator\nDetails : " + ex.Message); // if errep shoe the error message only
                 }
                 finally
                 {
-                    
+                    //if the connecton is open, close the connection.
                     if(Connection.State == ConnectionState.Open)Connection.Close();
                 }
             }
@@ -561,6 +615,26 @@ namespace Pandora_Green_Spot_POS
         private void btn_reload_Click(object sender, EventArgs e)
         {
             LoadList();
+        }
+
+        private void billArea_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            //if contraols falls to 0 reset the total.
+            if(billArea.Controls.Count ==0)
+            {
+                billTotal = 0;
+                lbl_billTotal.Text = "Rs.  " + billTotal.ToString("F2");
+            }
+        }
+
+        private void billArea_MouseEnter(object sender, EventArgs e)
+        {
+            lbl_delete.Visible = true;
+        }
+
+        private void billArea_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_delete.Visible = false;
         }
     }
 }
