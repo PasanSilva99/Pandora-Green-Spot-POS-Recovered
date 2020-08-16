@@ -106,6 +106,7 @@ namespace Pandora_Green_Spot_POS
                         NewSale newSale = new NewSale();
                         newSale.Show();
                         this.Hide();
+                        Properties.Settings.Default.
 
                     }
                     else
