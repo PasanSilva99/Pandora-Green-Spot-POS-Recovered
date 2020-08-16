@@ -17,18 +17,21 @@ namespace Pandora_Green_Spot_POS
 {
     public partial class NewSale : Form
     {
+        //connection to the db
         SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PandoraGreenSpot\Pandora.mdf;Integrated Security=True;Connect Timeout=30");
-        int DiscountTodat = 0;
-        long BillID = 0;
-        int BillNum = 0;
+        int DiscountTodat = 0; //For a static discount for the day
+        long BillID = 0; // Keep the bill id
+        int BillNum = 0; // Sessions bill num
+        bool validate = false; //Save validation state. Changes continu
 
-        private readonly Random _random = new Random();
+        private readonly Random _random = new Random(); // A random number
         public int RandomNumber()
         {
             return _random.Next(999);
         }
         public NewSale()
         {
+            //Add masks to the tb
             InitializeComponent();
             MaskAdd(TB_name, "Enter Item Name");
             MaskAdd(TB_price, "Enter Item Price");
@@ -36,6 +39,7 @@ namespace Pandora_Green_Spot_POS
             MaskAdd(TB_dis, "Discount");
             MaskAdd(TB_search, "Search Items");
 
+            //Events tb
             TB_search.GotFocus += TB_search_GotFocus;
             TB_search.LostFocus += TB_search_LostFocus;
             TB_name.GotFocus += TB_name_GotFocus;
@@ -47,21 +51,24 @@ namespace Pandora_Green_Spot_POS
             TB_qty.LostFocus += TB_qty_LostFocus;
             TB_dis.LostFocus += TB_dis_LostFocus;
 
+            //Load the items to the list
             LoadList();
             
         }
 
+        //reload the window
         public void ReloadF()
         {
             this.Refresh();
         }
-        int itemID;
+        int itemID; // Save the sel item id
         private void LoadList()
         {
             ItemArea.Controls.Clear();
             //Loding the available item the the item list view
             try
             {
+                //quary for select all the items
                 String qry = "Select Product_Name, Category, Product_Price, Image, ItemID FROM Product";
                 SqlCommand cmd = new SqlCommand(qry, Connection);
                 Connection.Open();
@@ -323,6 +330,40 @@ namespace Pandora_Green_Spot_POS
 
             pbox.Image = resized;
         }
+
+        private bool validation()
+        {
+            //MaskAdd(TB_name, "Enter Item Name");
+            //MaskAdd(TB_price, "Enter Item Price");
+            //MaskAdd(TB_qty, "Qty");
+            //MaskAdd(TB_dis, "Discount");
+            //MaskAdd(TB_search, "Search Items");
+            if (
+                (
+                    TB_name.Text != "" &&
+                    TB_price.Text != "" &&
+                    TB_qty.Text != "" &&
+                    TB_dis.Text != "")
+                && (
+                    TB_name.Text != "Enter Item Name" &&
+                    TB_price.Text != "Enter Item Price" &&
+                    TB_qty.Text != "Qty" &&
+                    TB_dis.Text != "Discount"
+                    )
+                 )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            
+        }
+
+
+
         double billTotal = 0;
         /// <summary>
         /// Adds Items to the bill 
@@ -331,69 +372,73 @@ namespace Pandora_Green_Spot_POS
         /// <param name="e"></param>
         private void btn_addToBill_Click(object sender, EventArgs e)
         {
-            if(billArea.Controls.Count <1)
+            if (validation())
             {
-                RefreshBill();
+                if (billArea.Controls.Count < 1)
+                {
+                    RefreshBill();
+                }
+
+                billItem bItem = new billItem();
+                bItem.ItemName = TB_name.Text;
+                bItem.ItemCat = cat;
+
+                bItem.ItemPrice = TB_price.Text;
+                bItem.ItemQty = TB_qty.Text;
+                bItem.Size = new Size(245, 45);
+                bItem.DoubleClick += BItem_DoubleClick;
+
+                billArea.Controls.Add(bItem);
+                this.ActiveControl = bItem;
+                billArea.ScrollControlIntoView(bItem);
+
+                //Add item to the bill
+                try
+                {
+                    String Qry = "INSERT INTO Bill (Bill_ID, ItemID , ItemName, ItemCategory, ItemDiscount, ItemPrice, Qty, Total, Date, Time) " +
+                    "VALUES (" +
+                    BillID + "," +
+                    itemID + "," +
+                    "'" + TB_name.Text + "'," +
+                    "'" + cat + "'," +
+                    TB_dis.Text + "," +
+                    TB_price.Text + "," +
+                    TB_qty.Text + "," +
+                    float.Parse(TB_qty.Text) * float.Parse(TB_price.Text) +
+                    ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "'" +
+                    ",'" + DateTime.Now.ToString("hh:mm:ss") + "')";
+
+                    SqlCommand cmd = new SqlCommand(Qry, Connection);
+                    Connection.Open();
+                    cmd.ExecuteNonQuery();
+                    itemID = 0;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    Connection.Close();
+                }
+
+                CalculateTotal();
+
+                ReportAnalysis analysis = new ReportAnalysis();
+                analysis.UpdatePopularity();
+
+                TB_dis.Clear();
+                TB_name.Clear();
+                TB_price.Clear();
+                TB_qty.Clear();
+                MaskAdd(TB_name, "Enter Item Name");
+                MaskAdd(TB_price, "Enter Item Price");
+                MaskAdd(TB_qty, "Qty");
+                MaskAdd(TB_dis, "Discount");
+                MaskAdd(TB_search, "Search Items");
             }
 
-            billItem bItem = new billItem();
-            bItem.ItemName = TB_name.Text;
-            bItem.ItemCat = cat;
-            
-            bItem.ItemPrice = TB_price.Text;
-            bItem.ItemQty = TB_qty.Text;
-            bItem.Size = new Size(245, 45);
-            bItem.DoubleClick += BItem_DoubleClick;
-            
-            billArea.Controls.Add(bItem);
-            this.ActiveControl = bItem;
-            billArea.ScrollControlIntoView(bItem);
-
-            //Add item to the bill
-            try
-            {
-                String Qry = "INSERT INTO Bill (Bill_ID, ItemID , ItemName, ItemCategory, ItemDiscount, ItemPrice, Qty, Total, Date, Time) " +
-                "VALUES (" +
-                BillID +","+
-                itemID + "," +
-                "'" + TB_name.Text + "'," +
-                "'" + cat + "'," +
-                TB_dis.Text +","+
-                TB_price.Text +","+
-                TB_qty.Text +","+
-                float.Parse(TB_qty.Text) * float.Parse(TB_price.Text) +
-                ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "'" +
-                ",'" + DateTime.Now.ToString("hh:mm:ss") + "')";
-
-                SqlCommand cmd = new SqlCommand(Qry, Connection);
-                Connection.Open();
-                cmd.ExecuteNonQuery();
-                itemID = 0; 
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                Connection.Close();
-            }
-
-            CalculateTotal();
-
-            ReportAnalysis analysis = new ReportAnalysis();
-            analysis.UpdatePopularity();
-
-            TB_dis.Clear();
-            TB_name.Clear();
-            TB_price.Clear();
-            TB_qty.Clear();
-            MaskAdd(TB_name, "Enter Item Name");
-            MaskAdd(TB_price, "Enter Item Price");
-            MaskAdd(TB_qty, "Qty");
-            MaskAdd(TB_dis, "Discount");
-            MaskAdd(TB_search, "Search Items");
         }
 
         private void CalculateTotal()
@@ -409,10 +454,6 @@ namespace Pandora_Green_Spot_POS
                 
 
 
-            }
-            catch (SqlNullValueException db)
-            {
-               
             }
             catch (Exception ex)
             {

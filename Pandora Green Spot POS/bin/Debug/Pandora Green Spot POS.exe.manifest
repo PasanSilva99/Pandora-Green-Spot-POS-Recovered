@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pandora Green Spot POS.exe" size="130528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pandora Green Spot POS.exe" size="131040">
       <assemblyIdentity name="Pandora Green Spot POS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MhYS5UHaAbZJQCWh22Bp2rqtQ/1pgNhIqJz6/oOTngg=</dsig:DigestValue>
+        <dsig:DigestValue>tzKEE5Ef19UgrKn0GObexE24Hc69fkjaZXgfw+OutWk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
