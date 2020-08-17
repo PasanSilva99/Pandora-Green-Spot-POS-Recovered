@@ -67,13 +67,18 @@ namespace Pandora_Green_Spot_POS
         /// <param name="e"></param>
         private void customButton2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
+            //Application.Exit();
+            ///\ Got an error after changing the Administrative priladges. Instedof exit, i used exitthread to close all windows and exit.
         }
 
         private void customButton1_Load(object sender, EventArgs e)
         {
 
         }
+
+
+        string username, userpriv, CashiName;
 
         /// <summary>
         /// This function is to 
@@ -103,10 +108,18 @@ namespace Pandora_Green_Spot_POS
                     if (userTb.Rows.Count == 1)
                     {
                         //Login Successfull
+                        username = userTb.Rows[0][0].ToString();
+                        userpriv = userTb.Rows[0][6].ToString();
+                        CashiName = userTb.Rows[0][2].ToString().Replace(" ","") + " " + userTb.Rows[0][3].ToString().Replace(" ","");
+                        Properties.Settings.Default.User = username;
+                        Properties.Settings.Default.PrivLevel = userpriv;
+                        Properties.Settings.Default.CashierName = CashiName;
+                        
+                        
                         NewSale newSale = new NewSale();
                         newSale.Show();
                         this.Hide();
-                        Properties.Settings.Default.
+                        
 
                     }
                     else

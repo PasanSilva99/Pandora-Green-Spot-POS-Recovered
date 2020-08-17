@@ -492,6 +492,7 @@ namespace Pandora_Green_Spot_POS
         /// </summary>
         private void RefreshBill()
         {
+            lbl_cashier.Text = Properties.Settings.Default.CashierName;
             BillNum++;  // Increase the bill number fro the session
             String newBillId = DateTime.Now.ToString("mmdd") + RandomNumber().ToString() + BillNum.ToString();  //  Genorate a bill ID
             BillID = Convert.ToInt64(newBillId); //Save the bill ID as a LONG

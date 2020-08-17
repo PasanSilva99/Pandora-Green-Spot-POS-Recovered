@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Pandora Green Spot POS.exe.manifest" size="3541">
+    <dependentAssembly dependencyType="install" codebase="Pandora Green Spot POS.exe.manifest" size="3542">
       <assemblyIdentity name="Pandora Green Spot POS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FleRZ8fEksVkVAmYIdC5xFMwM6B2XCsKb6KUK2ZFB0o=</dsig:DigestValue>
+        <dsig:DigestValue>wWwWjsNtCXquuIuhZoym6faIDvH7z8zH7cc4Rxc+Z1w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
