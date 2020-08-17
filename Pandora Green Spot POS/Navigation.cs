@@ -12,7 +12,8 @@ namespace Pandora_Green_Spot_POS
 {
     public partial class Navigation : UserControl
     {
-        //enum - enumerations - you can access enum items with the dot syntax - reffer w3schools
+        //@  Mewni, Dasitha
+        //enum - enumerations - you can access enum items with the dot syntax - reffer w3schools - Pasan
         public enum Page
         {
             newSalePage,
@@ -22,6 +23,9 @@ namespace Pandora_Green_Spot_POS
         }
 
         public Page CurrentPage { get; set; }
+
+        string Priviladge = Properties.Settings.Default.PrivLevel;
+
         public Navigation()
         {
             InitializeComponent();
@@ -86,7 +90,22 @@ namespace Pandora_Green_Spot_POS
         private void Img_manage_Click(object sender, EventArgs e)
         {
             ManageItems manage = new ManageItems();
-            manage.Show();
+            if (Priviladge == "Admin")
+            {
+                
+                manage.Show();
+            }
+            else
+            {
+               if(MessageBox.Show("You Need Administrator Priviladge to access this page\nLogin as Admin?", "Eccess Denied.", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    if(MessageBox.Show("You will be logged out. Want Proceed?", "About to logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Pandora_Green_Spot_POS.NewSale.ActiveForm.Hide();
+                        Pandora_Green_Spot_POS.Login.ActiveForm.Activate();
+                    }
+                }
+            }
         }
 
 
@@ -95,15 +114,30 @@ namespace Pandora_Green_Spot_POS
         #region Mouse Click Reports
         private void Rp_reports_Click(object sender, EventArgs e)
         {
-            if(CurrentPage == Page.ReportsPage)
+            Reports re = new Reports();
+            if (Priviladge.Contains("Admin"))
             {
-                //Youre in the reports page
+                if (CurrentPage == Page.ReportsPage)
+                {
+                    //Youre in the reports page
+                }
+                else
+                {
+                    
+                    re.StartPosition = FormStartPosition.CenterParent;
+                    re.Show();
+                }
             }
             else
             {
-                Reports re = new Reports();
-                re.StartPosition = FormStartPosition.CenterParent;
-                re.Show();
+                if (MessageBox.Show("You Need Administrator Priviladge to access this page\nLogin as Admin?", "Eccess Denied.", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    if (MessageBox.Show("You will be logged out. Want Proceed?", "About to logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Pandora_Green_Spot_POS.NewSale.ActiveForm.Hide();
+                        Pandora_Green_Spot_POS.Login.ActiveForm.Activate();
+                    }
+                }
             }
         }
 
@@ -158,17 +192,33 @@ namespace Pandora_Green_Spot_POS
         #region mouse click addnew
         private void Rp_AddNew_Click(object sender, EventArgs e)
         {
-            //Validation Code
-            if(CurrentPage == Page.AddNewPage)
+            AddProduct addProduct = new AddProduct();
+            if (Priviladge.Contains("Admin"))
             {
-                //You re in this page
+
+                //Validation Code
+                if (CurrentPage == Page.AddNewPage)
+                {
+                    //You re in this page
+                }
+                else
+                {
+                    
+                    addProduct.StartPosition = FormStartPosition.CenterParent;
+                    addProduct.Show();
+                }
             }
             else
             {
-                AddProduct addProduct = new AddProduct();
-                addProduct.StartPosition = FormStartPosition.CenterParent;
-                addProduct.Show();
-                NewSale newSale = new NewSale();
+                if (MessageBox.Show("You Need Administrator Priviladge to access this page\nLogin as Admin?", "Eccess Denied.", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    if (MessageBox.Show("You will be logged out. Want Proceed?", "About to logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Pandora_Green_Spot_POS.NewSale.ActiveForm.Hide();
+                        Pandora_Green_Spot_POS.Login.ActiveForm.Activate();
+
+                    }
+                }
             }
         }
 
@@ -223,7 +273,7 @@ namespace Pandora_Green_Spot_POS
         #region mouse click new sale
         private void Rp_newSale_Click(object sender, EventArgs e)
         {
-            if(CurrentPage == Page.newSalePage)
+            if(Priviladge.Contains("Admin"))
             {
                 //You are in this page
             }

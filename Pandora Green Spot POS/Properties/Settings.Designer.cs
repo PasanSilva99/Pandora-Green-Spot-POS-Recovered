@@ -34,5 +34,29 @@ namespace Pandora_Green_Spot_POS.Properties {
                 this["User"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrivLevel {
+            get {
+                return ((string)(this["PrivLevel"]));
+            }
+            set {
+                this["PrivLevel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CashierName {
+            get {
+                return ((string)(this["CashierName"]));
+            }
+            set {
+                this["CashierName"] = value;
+            }
+        }
     }
 }

@@ -180,6 +180,7 @@
     <Compile Include="RoundPanel.Designer.cs">
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="WinAPI.cs" />
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
