@@ -90,9 +90,8 @@ namespace Pandora_Green_Spot_POS
         private void Img_manage_Click(object sender, EventArgs e)
         {
             ManageItems manage = new ManageItems();
-            if (Priviladge == "Admin")
+            if (Priviladge.Contains("Admin"))
             {
-                
                 manage.Show();
             }
             else
@@ -135,7 +134,10 @@ namespace Pandora_Green_Spot_POS
                     if (MessageBox.Show("You will be logged out. Want Proceed?", "About to logout", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         Pandora_Green_Spot_POS.NewSale.ActiveForm.Hide();
-                        Pandora_Green_Spot_POS.Login.ActiveForm.Activate();
+                        
+                            Login login = new Login();
+                            login.Show();
+                        
                     }
                 }
             }
