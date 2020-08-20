@@ -115,6 +115,12 @@
     <Compile Include="Devider.Designer.cs">
       <DependentUpon>Devider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ItemView.Designer.cs" />
+    <Compile Include="ItemView1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemView.resx</DependentUpon>
+    </Compile>
     <Compile Include="ListItemManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,10 +218,16 @@
     <EmbeddedResource Include="Devider.resx">
       <DependentUpon>Devider.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemBlock.resx">
       <DependentUpon>ItemBlock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemView.resx" />
+    <EmbeddedResource Include="ItemView.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemView1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListItemManage.resx">
       <DependentUpon>ListItemManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +318,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_groups_64px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
