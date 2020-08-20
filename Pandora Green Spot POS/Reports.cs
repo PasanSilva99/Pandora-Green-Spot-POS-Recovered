@@ -240,6 +240,10 @@ namespace Pandora_Green_Spot_POS
             }
         }
 
-
+        private void btn_bill_Click(object sender, EventArgs e)
+        {
+            BillManagement bill = new BillManagement();
+            bill.Show();
+        }
     }
 }

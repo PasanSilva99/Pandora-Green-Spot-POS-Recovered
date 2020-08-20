@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gradientPanel1 = new Pandora_Green_Spot_POS.GradientPanel();
+            this.btn_bill = new PointOfSalesSystem.CustomButton();
+            this.btn_emp = new PointOfSalesSystem.CustomButton();
             this.chart_topSelling = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart_rev = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.devider6 = new Pandora_Green_Spot_POS.Devider();
@@ -68,6 +70,8 @@
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(87)))), ((int)(((byte)(217)))));
             this.gradientPanel1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(179)))), ((int)(((byte)(0)))));
+            this.gradientPanel1.Controls.Add(this.btn_bill);
+            this.gradientPanel1.Controls.Add(this.btn_emp);
             this.gradientPanel1.Controls.Add(this.chart_topSelling);
             this.gradientPanel1.Controls.Add(this.chart_rev);
             this.gradientPanel1.Controls.Add(this.devider6);
@@ -95,29 +99,64 @@
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(906, 462);
+            this.gradientPanel1.Size = new System.Drawing.Size(906, 498);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // btn_bill
+            // 
+            this.btn_bill.BackColor = System.Drawing.Color.Transparent;
+            this.btn_bill.ButtonFont = new System.Drawing.Font("Century Gothic", 10F);
+            this.btn_bill.ButtonText = "Bill Managemnt";
+            this.btn_bill.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_bill.defaultForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_bill.Location = new System.Drawing.Point(455, 438);
+            this.btn_bill.Name = "btn_bill";
+            this.btn_bill.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btn_bill.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_bill.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btn_bill.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_bill.Size = new System.Drawing.Size(435, 60);
+            this.btn_bill.TabIndex = 25;
+            this.btn_bill.textSize = 0;
+            this.btn_bill.Click += new System.EventHandler(this.btn_bill_Click);
+            // 
+            // btn_emp
+            // 
+            this.btn_emp.BackColor = System.Drawing.Color.Transparent;
+            this.btn_emp.ButtonFont = new System.Drawing.Font("Century Gothic", 10F);
+            this.btn_emp.ButtonText = "Add/ Remove Employees";
+            this.btn_emp.defaultBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btn_emp.defaultForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_emp.Location = new System.Drawing.Point(21, 438);
+            this.btn_emp.Name = "btn_emp";
+            this.btn_emp.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btn_emp.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_emp.onOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btn_emp.onOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_emp.Size = new System.Drawing.Size(435, 60);
+            this.btn_emp.TabIndex = 24;
+            this.btn_emp.textSize = 0;
             // 
             // chart_topSelling
             // 
             this.chart_topSelling.BorderSkin.BorderColor = System.Drawing.Color.Gray;
-            chartArea3.BorderColor = System.Drawing.Color.DarkGray;
-            chartArea3.Name = "ChartArea1";
-            this.chart_topSelling.ChartAreas.Add(chartArea3);
-            legend3.ForeColor = System.Drawing.Color.DarkGray;
-            legend3.Name = "Legend1";
-            this.chart_topSelling.Legends.Add(legend3);
+            chartArea1.BorderColor = System.Drawing.Color.DarkGray;
+            chartArea1.Name = "ChartArea1";
+            this.chart_topSelling.ChartAreas.Add(chartArea1);
+            legend1.ForeColor = System.Drawing.Color.DarkGray;
+            legend1.Name = "Legend1";
+            this.chart_topSelling.Legends.Add(legend1);
             this.chart_topSelling.Location = new System.Drawing.Point(471, 202);
             this.chart_topSelling.Name = "chart_topSelling";
-            series3.ChartArea = "ChartArea1";
-            series3.IsValueShownAsLabel = true;
-            series3.IsVisibleInLegend = false;
-            series3.IsXValueIndexed = true;
-            series3.LabelForeColor = System.Drawing.Color.Gray;
-            series3.Legend = "Legend1";
-            series3.Name = "TopSales";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart_topSelling.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
+            series1.LabelForeColor = System.Drawing.Color.Gray;
+            series1.Legend = "Legend1";
+            series1.Name = "TopSales";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart_topSelling.Series.Add(series1);
             this.chart_topSelling.Size = new System.Drawing.Size(398, 216);
             this.chart_topSelling.TabIndex = 23;
             this.chart_topSelling.Text = "chart1";
@@ -125,21 +164,21 @@
             // chart_rev
             // 
             this.chart_rev.BorderSkin.BorderColor = System.Drawing.Color.Gray;
-            chartArea4.BorderColor = System.Drawing.Color.DarkGray;
-            chartArea4.Name = "ChartArea1";
-            this.chart_rev.ChartAreas.Add(chartArea4);
-            legend4.ForeColor = System.Drawing.Color.DarkGray;
-            legend4.Name = "Legend1";
-            this.chart_rev.Legends.Add(legend4);
+            chartArea2.BorderColor = System.Drawing.Color.DarkGray;
+            chartArea2.Name = "ChartArea1";
+            this.chart_rev.ChartAreas.Add(chartArea2);
+            legend2.ForeColor = System.Drawing.Color.DarkGray;
+            legend2.Name = "Legend1";
+            this.chart_rev.Legends.Add(legend2);
             this.chart_rev.Location = new System.Drawing.Point(31, 202);
             this.chart_rev.Name = "chart_rev";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.IsVisibleInLegend = false;
-            series4.LabelForeColor = System.Drawing.Color.Gray;
-            series4.Legend = "Legend1";
-            series4.Name = "Monthly";
-            this.chart_rev.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.IsVisibleInLegend = false;
+            series2.LabelForeColor = System.Drawing.Color.Gray;
+            series2.Legend = "Legend1";
+            series2.Name = "Monthly";
+            this.chart_rev.Series.Add(series2);
             this.chart_rev.Size = new System.Drawing.Size(398, 216);
             this.chart_rev.TabIndex = 22;
             this.chart_rev.Text = "chart_rev";
@@ -382,7 +421,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 462);
+            this.ClientSize = new System.Drawing.Size(906, 498);
             this.Controls.Add(this.gradientPanel1);
             this.Name = "Reports";
             this.Text = "Reports";
@@ -422,5 +461,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_rev;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_topSelling;
+        private PointOfSalesSystem.CustomButton btn_bill;
+        private PointOfSalesSystem.CustomButton btn_emp;
     }
 }

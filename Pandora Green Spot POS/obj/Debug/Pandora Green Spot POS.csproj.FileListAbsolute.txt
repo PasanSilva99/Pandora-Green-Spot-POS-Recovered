@@ -113,3 +113,4 @@ C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\bin\Debug\
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe.manifest
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.application
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.check.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.BillManagement.resources
