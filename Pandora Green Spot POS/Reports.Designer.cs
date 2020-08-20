@@ -136,6 +136,7 @@
             this.btn_emp.Size = new System.Drawing.Size(435, 60);
             this.btn_emp.TabIndex = 24;
             this.btn_emp.textSize = 0;
+            this.btn_emp.Click += new System.EventHandler(this.btn_emp_Click);
             // 
             // chart_topSelling
             // 

@@ -59,7 +59,7 @@
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(931, 511);
+            this.gradientPanel1.Size = new System.Drawing.Size(884, 520);
             this.gradientPanel1.TabIndex = 0;
             // 
             // btn_today
@@ -69,7 +69,7 @@
             this.btn_today.ButtonText = "Today\'s Bill";
             this.btn_today.defaultBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_today.defaultForeColor = System.Drawing.Color.White;
-            this.btn_today.Location = new System.Drawing.Point(103, 454);
+            this.btn_today.Location = new System.Drawing.Point(73, 454);
             this.btn_today.Name = "btn_today";
             this.btn_today.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btn_today.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -87,7 +87,7 @@
             this.btn_reload.ButtonText = "Reload all Bills";
             this.btn_reload.defaultBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_reload.defaultForeColor = System.Drawing.Color.White;
-            this.btn_reload.Location = new System.Drawing.Point(452, 454);
+            this.btn_reload.Location = new System.Drawing.Point(422, 454);
             this.btn_reload.Name = "btn_reload";
             this.btn_reload.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btn_reload.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -105,7 +105,7 @@
             this.btn_drop.ButtonText = "Reset all Bills";
             this.btn_drop.defaultBackColor = System.Drawing.Color.Firebrick;
             this.btn_drop.defaultForeColor = System.Drawing.Color.White;
-            this.btn_drop.Location = new System.Drawing.Point(666, 454);
+            this.btn_drop.Location = new System.Drawing.Point(636, 454);
             this.btn_drop.Name = "btn_drop";
             this.btn_drop.onClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btn_drop.onClickForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -146,7 +146,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.billData.DefaultCellStyle = dataGridViewCellStyle3;
             this.billData.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.billData.Location = new System.Drawing.Point(49, 69);
+            this.billData.Location = new System.Drawing.Point(19, 69);
             this.billData.Name = "billData";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -168,7 +168,7 @@
             // devider1
             // 
             this.devider1.BackColor = System.Drawing.Color.White;
-            this.devider1.Location = new System.Drawing.Point(47, 46);
+            this.devider1.Location = new System.Drawing.Point(17, 46);
             this.devider1.Name = "devider1";
             this.devider1.Size = new System.Drawing.Size(849, 17);
             this.devider1.TabIndex = 2;
@@ -178,7 +178,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 21);
+            this.label1.Location = new System.Drawing.Point(365, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 1;
@@ -191,7 +191,7 @@
             this.roundPanel1._CornerRadius = 20F;
             this.roundPanel1._Shadow = true;
             this.roundPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundPanel1.Location = new System.Drawing.Point(36, 3);
+            this.roundPanel1.Location = new System.Drawing.Point(6, 3);
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Size = new System.Drawing.Size(870, 508);
             this.roundPanel1.TabIndex = 0;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 511);
+            this.ClientSize = new System.Drawing.Size(884, 520);
             this.Controls.Add(this.gradientPanel1);
             this.Name = "BillManagement";
             this.Text = "Bill Management";

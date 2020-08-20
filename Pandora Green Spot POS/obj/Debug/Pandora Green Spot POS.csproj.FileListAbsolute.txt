@@ -86,7 +86,6 @@ C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandor
 C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.exe
 C:\Users\Mewni\Downloads\New folder (16)\Pandora-Green-Spot-POS-Recovered\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.pdb
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.ListItemManage.resources
-C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csprojAssemblyReference.cache
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe.config
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.exe
 C:\Users\pasan\OneDrive\Pandora Green Spot POS - Pasan\Pandora Green Spot POS\bin\Debug\Pandora Green Spot POS.pdb
@@ -114,3 +113,6 @@ C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.application
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.check.resources
 C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.BillManagement.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.EmployeeManagement.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora_Green_Spot_POS.userView.resources
+C:\Users\pasan\OneDrive\Pandora Green Spot POS\Pandora Green Spot POS\obj\Debug\Pandora Green Spot POS.csprojAssemblyReference.cache

@@ -245,5 +245,11 @@ namespace Pandora_Green_Spot_POS
             BillManagement bill = new BillManagement();
             bill.Show();
         }
+
+        private void btn_emp_Click(object sender, EventArgs e)
+        {
+            EmployeeManagement emp = new EmployeeManagement();
+            emp.Show();
+        }
     }
 }

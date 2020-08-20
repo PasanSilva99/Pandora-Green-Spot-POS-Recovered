@@ -115,6 +115,12 @@
     <Compile Include="Devider.Designer.cs">
       <DependentUpon>Devider.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement.Designer.cs">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +193,12 @@
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="userView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userView.Designer.cs">
+      <DependentUpon>userView.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinAPI.cs" />
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
@@ -206,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Devider.resx">
       <DependentUpon>Devider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemBlock.resx">
       <DependentUpon>ItemBlock.cs</DependentUpon>
@@ -239,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoundPanel.resx">
       <DependentUpon>RoundPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userView.resx">
+      <DependentUpon>userView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Pandora Green Spot POS_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -301,6 +319,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
